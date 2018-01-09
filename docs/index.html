@@ -1,0 +1,117 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>index - projectname</title>
+
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="sidebar/sidebar.min.css" />
+<link rel="stylesheet" href="css/book.min.css" />
+<link rel="stylesheet" href="syntax-highlight/monokai.min.css" />
+<link rel="stylesheet" href="mermaid/mermaid.css" />
+
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">projectname</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="github"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
+                    <li><a href="download"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
+                    <li><a href="License.html">License</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 hidden-xs hidden-sm">
+                
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>On This Page</h4>
+            </div>
+            <div id="header-menu" class="panel-body main-menu">
+                <ul></ul>
+            </div>
+        </div>  
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Table of Contents</h4>
+            </div>
+            <div class="panel-body main-menu">
+                <ul>
+</ul>
+            </div>
+        </div>
+
+            </div>
+			<div class="col-md-9">
+								<div id="static-content" class="markdown">
+					<h1 id="extensioncord-useful-extensions-for.net-types">ExtensionCord - Useful Extensions for .NET Types</h1>
+<p>This assembly contains useful extension methods and helper classes for standard .NET types. They have
+came in handy in many projects I have authored in the past. So, I gave them a home in their own assembly
+and created a nuget package for it.</p>
+<p>The name of the library stems from my woodworking hobby. The first thing I usually do before
+starting a woodworking project is get the extension cord to power my tools. This library is
+similar in the way that its methods are needed in pretty much all C# code I write. So, the first
+thing I'll do is add reference to it whenever I create a new project.</p>
+<p>The extension classes in the library are listed below with links to their documentation. The documentation
+is generated with the <a href="https://johtela.github.io/LiterateProgramming">Literate Programming</a> tool I have
+also written.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="src/ArrayExt.html">ArrayExt</a> class contains methods that help accessing and modifying arrays.</li>
+<li><a href="src/ArrayExt.html">BoolExt</a> has few extension methods for booleans.</li>
+<li><a href="src/Either.html">Either</a> a generic class that can contain one of two possible values.</li>
+<li><a href="src/EnumerableExt.html">EnumerableExt</a> contains a lot of extenion methods for the IEnumerable
+interface.</li>
+<li><a href="src/Fun.html">Fun</a> is a static class that contains methods for generic delegates Func and Action.</li>
+<li><a href="src/NumExt.html">NumExt</a> extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
+<li><a href="src/ObjectExt.html">ObjectExt</a> has few generic extension methods which work with any type.</li>
+<li><a href="src/Params.html">Params</a> is a base class for key-value collections that can be constructed
+with collection initializers.</li>
+<li><a href="src/ReflectionExt.html">ReflectionExt</a> extends classes related to reflection.</li>
+<li><a href="src/Seq.html">Seq</a> is a minimal implementation of an immutable, singly-linked list.</li>
+<li><a href="src/StringExt.html">StringExt</a> has some methdods that help string manipulation.</li>
+<li><a href="src/TupleExt.html">TupleExt</a> extends tuples with a couple of helper methods.</li>
+</ul>
+
+				</div>
+							</div>
+        </div>
+    </div>
+    
+    <footer class="panel-footer text-center">
+        <p>footer</p>
+    </footer>
+
+
+    
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="sidebar/sidebar.js"></script>
+    <script src="syntax-highlight/syntax.js"></script>
+</body>
+</html>

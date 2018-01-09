@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Seq - projectname</title>
+
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../sidebar/sidebar.min.css" />
+<link rel="stylesheet" href="../css/book.min.css" />
+<link rel="stylesheet" href="../syntax-highlight/monokai.min.css" />
+<link rel="stylesheet" href="../mermaid/mermaid.css" />
+
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">projectname</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="github"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
+                    <li><a href="download"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
+                    <li><a href="../License.html">License</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 hidden-xs hidden-sm">
+                
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>On This Page</h4>
+            </div>
+            <div id="header-menu" class="panel-body main-menu">
+                <ul></ul>
+            </div>
+        </div>  
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Table of Contents</h4>
+            </div>
+            <div class="panel-body main-menu">
+                <ul>
+</ul>
+            </div>
+        </div>
+
+            </div>
+			<div class="col-md-9">
+								<div id="static-content" class="markdown">
+					<h1 id="immutable-singly-linked-list">Immutable Singly Linked List</h1>
+<p>The data structure that is employed by practically every functional programming
+language is singly linked list. Operations defined for the list are pure which
+makes the list immutable. None of the operations modify the existing list, but
+always return a new version of it. Structural sharing makes these operations
+efficient.</p>
+<p>Since this data structure is useful in many algorithms and .NET framework does
+not provide one out-of-the-box, we define a minimal implementation here. We
+could use the
+<a href="https://www.nuget.org/packages/System.Collections.Immutable/">System.Collections.Immutable</a>
+Nuget package provided by Microsoft, but it brings with it a long chain of
+dependencies. So, we will roll our own implementation to limit the dependencies
+to .NET framework only.</p>
+<pre class="csharp"><code class="csharp"><span class="keyword" id="Extensions">namespace</span> Extensions
+<span class="punctuation">{</span>
+	<span class="keyword">using</span> System<span class="punctuation">;</span>
+	<span class="keyword">using</span> System<span class="punctuation">.</span>Collections<span class="punctuation">;</span>
+	<span class="keyword">using</span> System<span class="punctuation">.</span>Collections<span class="punctuation">.</span>Generic<span class="punctuation">;</span>
+	<span class="keyword">using</span> System<span class="punctuation">.</span>Text<span class="punctuation">;</span>
+</code></pre>
+<h2 id="the-seq-class">The Seq<T> Class</h2>
+<p>For brevity, we will call the data structure <code>Seq&lt;T&gt;</code>. The name stands for
+sequence, an abstraction that represents a stream of data that can be
+traversed only forward. The class implements IEnumerable<T> which is
+a similar abstraction, but inherently mutable.</p>
+<pre class="csharp"><code class="csharp">	<span class="keyword" id="Extensions.Seq<T>">public</span> <span class="keyword">class</span> <span class="typename">Seq</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">:</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span>
+	<span class="punctuation">{</span>
+</code></pre>
+<h3 id="first-and-rest">First and Rest</h3>
+<p>The data structure has two parts: the first item (commonly also called
+as <em>head</em>) and the rest of the sequence (<em>tail</em>). The rest part is
+another sequence, which makes the structure is recursive. If the rest
+is <code>null</code>, then we are at the end of the sequence. An empty sequence
+is represented simply by <code>null</code>.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq<T>.First">public</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span> First <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.First.get">get</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.First.get">;</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.First.set">private</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.First.set">set</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.First.set">;</span> <span class="punctuation">}</span>
+		<span class="keyword" id="Extensions.Seq<T>.Rest">public</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> Rest <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.Rest.get">get</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.Rest.get">;</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.Rest.set">private</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.Rest.set">set</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.Rest.set">;</span> <span class="punctuation">}</span>
+
+		<span class="keyword" id="Extensions.Seq<T>.Seq(T, Extensions.Seq<T>)" data-toggle="tooltip" title="Extensions.Seq<T>.Seq(T, Extensions.Seq<T>)">internal</span> <span data-toggle="tooltip" title="Extensions.Seq<T>.Seq(T, Extensions.Seq<T>)">Seq</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span> first<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> rest<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span data-toggle="tooltip" title="T"><a href="../src/Seq.html#Extensions.Seq<T>.First">First</a></span> <span class="punctuation" data-toggle="tooltip" title="T">=</span> <span data-toggle="tooltip" title="T">first</span><span class="punctuation">;</span>
+			<span data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>.Rest">Rest</a></span> <span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">=</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">rest</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<h3 id="the-operator">The | Operator</h3>
+<p>The pipe <code>|</code> operator constructs a new sequence by prepending a new
+item at the front. This is a <em>O(1)</em> operation since the rest part
+of the existing sequence is used as-is. Internally this operation
+uses the static <code>Cons</code> constructor.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq<T>.operator |(T, Extensions.Seq<T>)" data-toggle="tooltip" title="Extensions.Seq<T>.operator |(T, Extensions.Seq<T>)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.operator |(T, Extensions.Seq<T>)">static</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.operator |(T, Extensions.Seq<T>)">operator</span> <span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.operator |(T, Extensions.Seq<T>)">|</span><span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span> first<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> rest<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> 
+			<span class="typename" data-toggle="tooltip" title="Extensions.Seq"><a href="../src/Seq.html#Extensions.Seq">Seq</a></span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq.Cons<T>(T, Extensions.Seq<T>)">.</span><span data-toggle="tooltip" title="Extensions.Seq.Cons<T>(T, Extensions.Seq<T>)"><a href="../src/Seq.html#Extensions.Seq.Cons<T>(T, Extensions.Seq<T>)">Cons</a></span><span class="punctuation">(</span><span data-toggle="tooltip" title="T">first</span><span class="punctuation">,</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">rest</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.operator |(T, Extensions.Seq<T>)">;</span>
+</code></pre>
+<h3 id="constructing-from-ienumerable">Constructing from IEnumerable</h3>
+<p>We cheat a bit when sequence is created from IEnumerable. The sequence
+is mutated when it is being constructed. This is ok, since we don't
+return the sequence to the caller until it is ready. So, from the
+caller's point of view, the sequence is immutable.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq<T>.FromEnumerable(System.Collections.Generic.IEnumerable<T>)" data-toggle="tooltip" title="Extensions.Seq<T>.FromEnumerable(System.Collections.Generic.IEnumerable<T>)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.FromEnumerable(System.Collections.Generic.IEnumerable<T>)">static</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="Extensions.Seq<T>.FromEnumerable(System.Collections.Generic.IEnumerable<T>)">FromEnumerable</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> enumerable<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span id="prev">prev</span> <span class="punctuation">=</span> <span class="keyword">null</span><span class="punctuation">,</span> <span id="result">result</span> <span class="punctuation">=</span> <span class="keyword">null</span><span class="punctuation">;</span>
+			<span class="keyword">foreach</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="T">var</span> item <span class="keyword">in</span> <span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">enumerable</span><span class="punctuation">)</span>
+			<span class="punctuation">{</span>
+				<span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>">var</span> <span id="curr">curr</span> <span class="punctuation">=</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>">new</span> <span class="typename"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="T">item</span><span class="punctuation">,</span> <span class="keyword">null</span><span class="punctuation">)</span><span class="punctuation">;</span>
+				<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="Extensions.Seq<T>">prev</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="keyword">null</span><span class="punctuation">)</span>
+					<span data-toggle="tooltip" title="Extensions.Seq<T>">result</span> <span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">=</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">curr</span><span class="punctuation">;</span>
+				<span class="keyword">else</span>
+					<span data-toggle="tooltip" title="Extensions.Seq<T>">prev</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">.</span><span data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>.Rest">Rest</a></span> <span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">=</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">curr</span><span class="punctuation">;</span>
+				<span data-toggle="tooltip" title="Extensions.Seq<T>">prev</span> <span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">=</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">curr</span><span class="punctuation">;</span>
+			<span class="punctuation">}</span>
+			<span class="keyword">return</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">result</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<h3 id="ienumerable-implementation">IEnumerable Implementation</h3>
+<p>By employing an iterator the IEnumerable implementation becomes trivial.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq<T>.GetEnumerator()" data-toggle="tooltip" title="Extensions.Seq<T>.GetEnumerator()">public</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerator<T>">IEnumerator</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="Extensions.Seq<T>.GetEnumerator()">GetEnumerator</span> <span class="punctuation">(</span><span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>">var</span> <span id="node">node</span> <span class="punctuation">=</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>">this</span><span class="punctuation">;</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">node</span> <span class="punctuation" data-toggle="tooltip" title="bool">!=</span> <span class="keyword">null</span><span class="punctuation">;</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">node</span> <span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">=</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">node</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">.</span><span data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>.Rest">Rest</a></span><span class="punctuation">)</span>
+				<span class="keyword">yield</span> <span class="keyword">return</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">node</span><span class="punctuation" data-toggle="tooltip" title="T">.</span><span data-toggle="tooltip" title="T"><a href="../src/Seq.html#Extensions.Seq<T>.First">First</a></span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+
+		<span class="typename" data-toggle="tooltip" title="System.Collections.IEnumerator">IEnumerator</span> <span class="typename" data-toggle="tooltip" title="System.Collections.IEnumerable">IEnumerable</span><span class="punctuation">.</span><span id="Extensions.Seq<T>.System.Collections.IEnumerable.GetEnumerator()" data-toggle="tooltip" title="Extensions.Seq<T>.System.Collections.IEnumerable.GetEnumerator()">GetEnumerator</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span data-toggle="tooltip" title="Extensions.Seq<T>.GetEnumerator()"><a href="../src/Seq.html#Extensions.Seq<T>.GetEnumerator()">GetEnumerator</a></span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.System.Collections.IEnumerable.GetEnumerator()">;</span>
+</code></pre>
+<h3 id="converting-to-string">Converting to String</h3>
+<p>A sequence can be printed as string. The parameters specify how the it is
+formatted. What opening and closing bracket are used, and what string
+separates the items.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq<T>.ToString(string, string, string)" data-toggle="tooltip" title="Extensions.Seq<T>.ToString(string, string, string)">public</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> <span data-toggle="tooltip" title="Extensions.Seq<T>.ToString(string, string, string)">ToString</span><span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="string">string</span> openBracket<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> separator<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> closeBracket<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="keyword" data-toggle="tooltip" title="System.Text.StringBuilder">var</span> <span id="res">res</span> <span class="punctuation">=</span> <span class="keyword" data-toggle="tooltip" title="System.Text.StringBuilder">new</span> <span class="typename">StringBuilder</span><span class="punctuation">(</span><span data-toggle="tooltip" title="string">openBracket</span><span class="punctuation">)</span><span class="punctuation">;</span>
+			<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>">var</span> <span id="item">item</span> <span class="punctuation">=</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>">this</span><span class="punctuation">;</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">item</span> <span class="punctuation" data-toggle="tooltip" title="bool">!=</span> <span class="keyword">null</span><span class="punctuation">;</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">item</span> <span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">=</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">item</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">.</span><span data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>.Rest">Rest</a></span><span class="punctuation">)</span>
+			<span class="punctuation">{</span>
+				<span data-toggle="tooltip" title="System.Text.StringBuilder">res</span><span class="punctuation" data-toggle="tooltip" title="System.Text.StringBuilder.Append(object)">.</span><span data-toggle="tooltip" title="System.Text.StringBuilder.Append(object)">Append</span><span class="punctuation">(</span><span data-toggle="tooltip" title="Extensions.Seq<T>">item</span><span class="punctuation" data-toggle="tooltip" title="T">.</span><span data-toggle="tooltip" title="T"><a href="../src/Seq.html#Extensions.Seq<T>.First">First</a></span><span class="punctuation">)</span><span class="punctuation">;</span>
+				<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="Extensions.Seq<T>">item</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">.</span><span data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>.Rest">Rest</a></span> <span class="punctuation" data-toggle="tooltip" title="bool">!=</span> <span class="keyword">null</span><span class="punctuation">)</span>
+					<span data-toggle="tooltip" title="System.Text.StringBuilder">res</span><span class="punctuation" data-toggle="tooltip" title="System.Text.StringBuilder.Append(string)">.</span><span data-toggle="tooltip" title="System.Text.StringBuilder.Append(string)">Append</span><span class="punctuation">(</span><span data-toggle="tooltip" title="string">separator</span><span class="punctuation">)</span><span class="punctuation">;</span>
+			<span class="punctuation">}</span>
+			<span data-toggle="tooltip" title="System.Text.StringBuilder">res</span><span class="punctuation" data-toggle="tooltip" title="System.Text.StringBuilder.Append(string)">.</span><span data-toggle="tooltip" title="System.Text.StringBuilder.Append(string)">Append</span><span class="punctuation">(</span><span data-toggle="tooltip" title="string">closeBracket</span><span class="punctuation">)</span><span class="punctuation">;</span>
+			<span class="keyword">return</span> <span data-toggle="tooltip" title="System.Text.StringBuilder">res</span><span class="punctuation" data-toggle="tooltip" title="System.Text.StringBuilder.ToString()">.</span><span data-toggle="tooltip" title="System.Text.StringBuilder.ToString()">ToString</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+
+		<span class="keyword" id="Extensions.Seq<T>.ToString()" data-toggle="tooltip" title="Extensions.Seq<T>.ToString()">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.ToString()">override</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> <span data-toggle="tooltip" title="Extensions.Seq<T>.ToString()">ToString</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span>
+			<span data-toggle="tooltip" title="Extensions.Seq<T>.ToString(string, string, string)"><a href="../src/Seq.html#Extensions.Seq<T>.ToString(string, string, string)">ToString</a></span><span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;[ &quot;</span><span class="punctuation">,</span> <span class="string" data-toggle="tooltip" title="string">&quot;, &quot;</span><span class="punctuation">,</span> <span class="string" data-toggle="tooltip" title="string">&quot; ]&quot;</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.ToString()">;</span>
+	<span class="punctuation">}</span>
+</code></pre>
+<h2 id="static-methods">Static Methods</h2>
+<p>The static methods are defined in the separate Seq class. This is a
+normal static class without any type parameters. We do this to avoid
+having to type the generic parameter when calling the static methods.</p>
+<pre class="csharp"><code class="csharp">	<span class="keyword" id="Extensions.Seq">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="typename">Seq</span>
+	<span class="punctuation">{</span>
+</code></pre>
+<h3 id="is-sequence-empty">Is Sequence Empty</h3>
+<p>The test for empty sequence just checks if the parameter is <code>null</code>.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq.IsEmpty<T>(Extensions.Seq<T>)" data-toggle="tooltip" title="Extensions.Seq.IsEmpty<T>(Extensions.Seq<T>)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq.IsEmpty<T>(Extensions.Seq<T>)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="Extensions.Seq.IsEmpty<T>(Extensions.Seq<T>)">IsEmpty</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> seq<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="keyword">return</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">seq</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="keyword">null</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<h3 id="constructing-a-sequence">Constructing a Sequence</h3>
+<p>The simplest way to construct a sequence is to give the first item
+and the rest of the sequence. The second parameter can be omitted to
+create a sequence with a single item.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq.Cons<T>(T, Extensions.Seq<T>)" data-toggle="tooltip" title="Extensions.Seq.Cons<T>(T, Extensions.Seq<T>)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq.Cons<T>(T, Extensions.Seq<T>)">static</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="Extensions.Seq.Cons<T>(T, Extensions.Seq<T>)">Cons</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span> first<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> rest <span class="punctuation">=</span> <span class="keyword">null</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> 
+			<span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>">new</span> <span class="typename"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="T">first</span><span class="punctuation">,</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">rest</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq.Cons<T>(T, Extensions.Seq<T>)">;</span>
+</code></pre>
+<p>The following is a convenience method that extends IEnumerable
+with a way to convert it to sequence.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq.ToSeq<T>(System.Collections.Generic.IEnumerable<T>)" data-toggle="tooltip" title="Extensions.Seq.ToSeq<T>(System.Collections.Generic.IEnumerable<T>)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq.ToSeq<T>(System.Collections.Generic.IEnumerable<T>)">static</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="Extensions.Seq.ToSeq<T>(System.Collections.Generic.IEnumerable<T>)">ToSeq</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> enumerable<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="keyword">return</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.FromEnumerable(System.Collections.Generic.IEnumerable<T>)">.</span><span data-toggle="tooltip" title="Extensions.Seq<T>.FromEnumerable(System.Collections.Generic.IEnumerable<T>)"><a href="../src/Seq.html#Extensions.Seq<T>.FromEnumerable(System.Collections.Generic.IEnumerable<T>)">FromEnumerable</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">enumerable</span><span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<h3 id="removing-an-item">Removing an Item</h3>
+<p>Removing an item is not a cheap operation since it requires at
+least a part of the sequence to be copied. It also uses recursion,
+so this method should be used only with very short sequences. If
+you try to use it with a too long sequence, you will get a stack
+overflow exception.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq.Remove<T>(Extensions.Seq<T>, T)" data-toggle="tooltip" title="Extensions.Seq.Remove<T>(Extensions.Seq<T>, T)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq.Remove<T>(Extensions.Seq<T>, T)">static</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="Extensions.Seq.Remove<T>(Extensions.Seq<T>, T)">Remove</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> seq<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span> item<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="Extensions.Seq<T>">seq</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="keyword">null</span><span class="punctuation">)</span>
+				<span class="keyword">throw</span> <span class="keyword" data-toggle="tooltip" title="System.ArgumentException">new</span> <span class="typename">ArgumentException</span> <span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;Item not found in sequence.&quot;</span><span class="punctuation">)</span><span class="punctuation">;</span>
+			<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="Extensions.Seq<T>">seq</span><span class="punctuation" data-toggle="tooltip" title="T">.</span><span data-toggle="tooltip" title="T"><a href="../src/Seq.html#Extensions.Seq<T>.First">First</a></span><span class="punctuation" data-toggle="tooltip" title="object.Equals(object)">.</span><span data-toggle="tooltip" title="object.Equals(object)">Equals</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="T">item</span><span class="punctuation">)</span><span class="punctuation">)</span>
+				<span class="keyword">return</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">seq</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">.</span><span data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>.Rest">Rest</a></span><span class="punctuation">;</span>
+			<span class="keyword">return</span> <span data-toggle="tooltip" title="Extensions.Seq.Cons<T>(T, Extensions.Seq<T>)"><a href="../src/Seq.html#Extensions.Seq.Cons<T>(T, Extensions.Seq<T>)">Cons</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="Extensions.Seq<T>">seq</span><span class="punctuation" data-toggle="tooltip" title="T">.</span><span data-toggle="tooltip" title="T"><a href="../src/Seq.html#Extensions.Seq<T>.First">First</a></span><span class="punctuation">,</span> <span data-toggle="tooltip" title="Extensions.Seq.Remove<T>(Extensions.Seq<T>, T)"><a href="../src/Seq.html#Extensions.Seq.Remove<T>(Extensions.Seq<T>, T)">Remove</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="Extensions.Seq<T>">seq</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">.</span><span data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>.Rest">Rest</a></span><span class="punctuation">,</span> <span data-toggle="tooltip" title="T">item</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<h3 id="searching-for-an-item">Searching for an Item</h3>
+<p>Searching is also a trivial operation, but <em>O(n)</em> in complexity.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq.Contains<T>(Extensions.Seq<T>, T)" data-toggle="tooltip" title="Extensions.Seq.Contains<T>(Extensions.Seq<T>, T)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq.Contains<T>(Extensions.Seq<T>, T)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="Extensions.Seq.Contains<T>(Extensions.Seq<T>, T)">Contains</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> seq<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span> item<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>">var</span> <span id="s">s</span> <span class="punctuation">=</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">seq</span><span class="punctuation">;</span>
+			<span class="keyword">while</span> <span class="punctuation">(</span><span class="punctuation" data-toggle="tooltip" title="bool">!</span><span class="punctuation" data-toggle="tooltip" title="bool">(</span><span data-toggle="tooltip" title="Extensions.Seq<T>">s</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="keyword">null</span> <span class="punctuation" data-toggle="tooltip" title="bool">||</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">s</span><span class="punctuation" data-toggle="tooltip" title="T">.</span><span data-toggle="tooltip" title="T"><a href="../src/Seq.html#Extensions.Seq<T>.First">First</a></span><span class="punctuation" data-toggle="tooltip" title="object.Equals(object)">.</span><span data-toggle="tooltip" title="object.Equals(object)">Equals</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="T">item</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="bool">)</span><span class="punctuation">)</span>
+				<span data-toggle="tooltip" title="Extensions.Seq<T>">s</span> <span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">=</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">s</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>">.</span><span data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>.Rest">Rest</a></span><span class="punctuation">;</span>
+			<span class="keyword">return</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">s</span> <span class="punctuation" data-toggle="tooltip" title="bool">!=</span> <span class="keyword">null</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+	<span class="punctuation">}</span>
+<span class="punctuation">}</span>
+</code></pre>
+
+				</div>
+							</div>
+        </div>
+    </div>
+    
+    <footer class="panel-footer text-center">
+        <p>footer</p>
+    </footer>
+
+
+    
+    <script src="../bootstrap/js/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../sidebar/sidebar.js"></script>
+    <script src="../syntax-highlight/syntax.js"></script>
+</body>
+</html>

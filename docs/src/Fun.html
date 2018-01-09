@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Fun - projectname</title>
+
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../sidebar/sidebar.min.css" />
+<link rel="stylesheet" href="../css/book.min.css" />
+<link rel="stylesheet" href="../syntax-highlight/monokai.min.css" />
+<link rel="stylesheet" href="../mermaid/mermaid.css" />
+
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">projectname</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="github"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
+                    <li><a href="download"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
+                    <li><a href="../License.html">License</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 hidden-xs hidden-sm">
+                
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>On This Page</h4>
+            </div>
+            <div id="header-menu" class="panel-body main-menu">
+                <ul></ul>
+            </div>
+        </div>  
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Table of Contents</h4>
+            </div>
+            <div class="panel-body main-menu">
+                <ul>
+</ul>
+            </div>
+        </div>
+
+            </div>
+			<div class="col-md-9">
+								<div id="static-content" class="markdown">
+					<h1 id="function-extensions">Function Extensions</h1>
+<p>It is possible to create extension methods for delagates, but they cannot be
+used in conjunction with lamda expressions, which makes them less convenient.
+So, the static methods defined in the <code>Fun</code>class below, are not actually extension
+methods. Anyhow, they are helper methods that either take or return generic <code>Func</code>
+and <code>Action</code> delegates.</p>
+<pre class="csharp"><code class="csharp"><span class="keyword" id="Extensions">namespace</span> Extensions
+<span class="punctuation">{</span>
+	<span class="keyword">using</span> System<span class="punctuation">;</span>
+
+	<span class="keyword" id="Extensions.Fun">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="typename">Fun</span>
+	<span class="punctuation">{</span>
+</code></pre>
+<h2 id="identity-function">Identity function</h2>
+<p>The identity function is the simplest possible function that one can
+define. As a lambda expression it looks like this:</p>
+<pre><code>a =&gt; a
+</code></pre>
+<p>Since the identity function is needed in so many places, it makes sense
+to define it explicitly as a static function. Then we don't need to define
+a new lambda function and allocate a closure every time. So, it is a bit
+more efficient as well.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Fun.Identity<T>(T)" data-toggle="tooltip" title="Extensions.Fun.Identity<T>(T)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Fun.Identity<T>(T)">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Fun.html#T">T</a></span> <span data-toggle="tooltip" title="Extensions.Fun.Identity<T>(T)">Identity</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Fun.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Fun.html#T">T</a></span> arg<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="keyword">return</span> <span data-toggle="tooltip" title="T">arg</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<h2 id="memoization">Memoization</h2>
+<p>Memoization is a technique where the result of a function is stored for
+later use. When the same function is called again, the cached result is
+returned instead of evaluating the function again.</p>
+<p>We will define here just the simplest case when the function to be called
+has no parameters. Therefore, we need to store only a single value instead
+of a map from parameters to results.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Fun.Memoize<T>(System.Func<T>)" data-toggle="tooltip" title="Extensions.Fun.Memoize<T>(System.Func<T>)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Fun.Memoize<T>(System.Func<T>)">static</span> <span class="typename" data-toggle="tooltip" title="System.Func<T>">Func</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Fun.html#T">T</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="Extensions.Fun.Memoize<T>(System.Func<T>)">Memoize</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Fun.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="System.Func<T>">Func</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Fun.html#T">T</a></span><span class="punctuation">&gt;</span> func<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Fun.html#T">T</a></span> <span class="punctuation">:</span> <span class="keyword">class</span>
+		<span class="punctuation">{</span>
+			<span class="typename" data-toggle="tooltip" title="T"><a href="../src/Fun.html#T">T</a></span> <span id="store">store</span> <span class="punctuation">=</span> <span class="keyword">null</span><span class="punctuation">;</span>
+			<span class="keyword">return</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation" data-toggle="tooltip" title="lambda expression">=&gt;</span>
+			<span class="punctuation">{</span>
+				<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="T">store</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="keyword">null</span><span class="punctuation">)</span>
+					<span data-toggle="tooltip" title="T">store</span> <span class="punctuation" data-toggle="tooltip" title="T">=</span> <span data-toggle="tooltip" title="System.Func<T>">func</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
+				<span class="keyword">return</span> <span data-toggle="tooltip" title="T">store</span><span class="punctuation">;</span>
+			<span class="punctuation">}</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<h2 id="calling-an-action-in-an-expression">Calling an Action in an Expression</h2>
+<p>Sometimes you need to invoke a method that does not return anything
+(a.k.a an <code>Action</code>) in an expression. This can be desirable, for
+example, to achieve some side effect. For these	cases, we will the
+following function which will call the action and then return the
+second parameter as-is.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Fun.ToExpression<T>(System.Action, T)" data-toggle="tooltip" title="Extensions.Fun.ToExpression<T>(System.Action, T)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Fun.ToExpression<T>(System.Action, T)">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Fun.html#T">T</a></span> <span data-toggle="tooltip" title="Extensions.Fun.ToExpression<T>(System.Action, T)">ToExpression</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Fun.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="System.Action">Action</span> action<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Fun.html#T">T</a></span> result<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span data-toggle="tooltip" title="System.Action">action</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
+			<span class="keyword">return</span> <span data-toggle="tooltip" title="T">result</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+	<span class="punctuation">}</span>
+<span class="punctuation">}</span>
+</code></pre>
+
+				</div>
+							</div>
+        </div>
+    </div>
+    
+    <footer class="panel-footer text-center">
+        <p>footer</p>
+    </footer>
+
+
+    
+    <script src="../bootstrap/js/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../sidebar/sidebar.js"></script>
+    <script src="../syntax-highlight/syntax.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>StringExt - projectname</title>
+
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../sidebar/sidebar.min.css" />
+<link rel="stylesheet" href="../css/book.min.css" />
+<link rel="stylesheet" href="../syntax-highlight/monokai.min.css" />
+<link rel="stylesheet" href="../mermaid/mermaid.css" />
+
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">projectname</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="github"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
+                    <li><a href="download"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
+                    <li><a href="../License.html">License</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 hidden-xs hidden-sm">
+                
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>On This Page</h4>
+            </div>
+            <div id="header-menu" class="panel-body main-menu">
+                <ul></ul>
+            </div>
+        </div>  
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Table of Contents</h4>
+            </div>
+            <div class="panel-body main-menu">
+                <ul>
+</ul>
+            </div>
+        </div>
+
+            </div>
+			<div class="col-md-9">
+								<div id="static-content" class="markdown">
+					<h1 id="extensions-to-strings">Extensions to Strings</h1>
+<p>The functionality of strings is fairly comprehensive in the .NET framework.
+There are some additions we can still come up with.</p>
+<pre class="csharp"><code class="csharp"><span class="keyword" id="Extensions">namespace</span> Extensions
+<span class="punctuation">{</span>
+    <span class="keyword">using</span> System<span class="punctuation">.</span>Collections<span class="punctuation">.</span>Generic<span class="punctuation">;</span>
+	<span class="keyword">using</span> System<span class="punctuation">.</span>Text<span class="punctuation">;</span>
+
+	<span class="keyword" id="Extensions.StringExt">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="typename">StringExt</span>
+	<span class="punctuation">{</span>
+</code></pre>
+<h2 id="repeat-a-string-n-times">Repeat a String <em>n</em> Times</h2>
+<p>The following method duplicates a string as many times as specified
+by the parameter.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.StringExt.Times(string, int)" data-toggle="tooltip" title="Extensions.StringExt.Times(string, int)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.StringExt.Times(string, int)">static</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> <span data-toggle="tooltip" title="Extensions.StringExt.Times(string, int)">Times</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> what<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> times<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="keyword" data-toggle="tooltip" title="System.Text.StringBuilder">var</span> <span id="sb">sb</span> <span class="punctuation">=</span> <span class="keyword" data-toggle="tooltip" title="System.Text.StringBuilder">new</span> <span class="typename">StringBuilder</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
+
+			<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="int">int</span> <span id="i">i</span> <span class="punctuation">=</span> <span class="number" data-toggle="tooltip" title="int">0</span><span class="punctuation">;</span> <span data-toggle="tooltip" title="int">i</span> <span class="punctuation" data-toggle="tooltip" title="bool">&lt;</span> <span data-toggle="tooltip" title="int">times</span><span class="punctuation">;</span> <span data-toggle="tooltip" title="int">i</span><span class="punctuation" data-toggle="tooltip" title="int">++</span><span class="punctuation">)</span>
+				<span data-toggle="tooltip" title="System.Text.StringBuilder">sb</span><span class="punctuation" data-toggle="tooltip" title="System.Text.StringBuilder.Append(string)">.</span><span data-toggle="tooltip" title="System.Text.StringBuilder.Append(string)">Append</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="string">what</span><span class="punctuation">)</span><span class="punctuation">;</span>
+
+			<span class="keyword">return</span> <span data-toggle="tooltip" title="System.Text.StringBuilder">sb</span><span class="punctuation" data-toggle="tooltip" title="System.Text.StringBuilder.ToString()">.</span><span data-toggle="tooltip" title="System.Text.StringBuilder.ToString()">ToString</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<h2 id="ienumerable-to-string">IEnumerable<char> to String</h2>
+<p>For some reason there is no ready, efficient way of converting
+an enumerable of chars into string. We provide that functionality
+with the <code>CharsToString</code> method.</p>
+<pre class="csharp"><code class="csharp">        <span class="keyword" id="Extensions.StringExt.CharsToString(System.Collections.Generic.IEnumerable<char>)" data-toggle="tooltip" title="Extensions.StringExt.CharsToString(System.Collections.Generic.IEnumerable<char>)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.StringExt.CharsToString(System.Collections.Generic.IEnumerable<char>)">static</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> <span data-toggle="tooltip" title="Extensions.StringExt.CharsToString(System.Collections.Generic.IEnumerable<char>)">CharsToString</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<char>">IEnumerable</span><span class="punctuation">&lt;</span><span class="keyword" data-toggle="tooltip" title="char">char</span><span class="punctuation">&gt;</span> chars<span class="punctuation">)</span>
+        <span class="punctuation">{</span>
+            <span class="keyword" data-toggle="tooltip" title="System.Text.StringBuilder">var</span> sb <span class="punctuation">=</span> <span class="keyword" data-toggle="tooltip" title="System.Text.StringBuilder">new</span> <span class="typename">StringBuilder</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
+            <span class="keyword">foreach</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="char">var</span> ch <span class="keyword">in</span> <span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<char>">chars</span><span class="punctuation">)</span>
+                <span data-toggle="tooltip" title="System.Text.StringBuilder">sb</span><span class="punctuation" data-toggle="tooltip" title="System.Text.StringBuilder.Append(char)">.</span><span data-toggle="tooltip" title="System.Text.StringBuilder.Append(char)">Append</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="char">ch</span><span class="punctuation">)</span><span class="punctuation">;</span>
+            <span class="keyword">return</span> <span data-toggle="tooltip" title="System.Text.StringBuilder">sb</span><span class="punctuation" data-toggle="tooltip" title="System.Text.StringBuilder.ToString()">.</span><span data-toggle="tooltip" title="System.Text.StringBuilder.ToString()">ToString</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
+        <span class="punctuation">}</span>
+	<span class="punctuation">}</span>
+<span class="punctuation">}</span>
+</code></pre>
+
+				</div>
+							</div>
+        </div>
+    </div>
+    
+    <footer class="panel-footer text-center">
+        <p>footer</p>
+    </footer>
+
+
+    
+    <script src="../bootstrap/js/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../sidebar/sidebar.js"></script>
+    <script src="../syntax-highlight/syntax.js"></script>
+</body>
+</html>

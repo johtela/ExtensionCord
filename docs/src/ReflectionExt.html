@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ReflectionExt - projectname</title>
+
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../sidebar/sidebar.min.css" />
+<link rel="stylesheet" href="../css/book.min.css" />
+<link rel="stylesheet" href="../syntax-highlight/monokai.min.css" />
+<link rel="stylesheet" href="../mermaid/mermaid.css" />
+
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">projectname</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="github"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
+                    <li><a href="download"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
+                    <li><a href="../License.html">License</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 hidden-xs hidden-sm">
+                
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>On This Page</h4>
+            </div>
+            <div id="header-menu" class="panel-body main-menu">
+                <ul></ul>
+            </div>
+        </div>  
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Table of Contents</h4>
+            </div>
+            <div class="panel-body main-menu">
+                <ul>
+</ul>
+            </div>
+        </div>
+
+            </div>
+			<div class="col-md-9">
+								<div id="static-content" class="markdown">
+					<h1 id="reflection-extensions">Reflection Extensions</h1>
+<p>The <code>ReflectionExt</code> class provides few extensions useful with reflection
+objects.</p>
+<pre class="csharp"><code class="csharp"><span class="keyword" id="Extensions">namespace</span> Extensions
+<span class="punctuation">{</span>
+	<span class="keyword">using</span> System<span class="punctuation">;</span>
+	<span class="keyword">using</span> System<span class="punctuation">.</span>Linq<span class="punctuation">;</span>
+	<span class="keyword">using</span> System<span class="punctuation">.</span>Reflection<span class="punctuation">;</span>
+
+	<span class="keyword" id="Extensions.ReflectionExt">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="typename">ReflectionExt</span>
+	<span class="punctuation">{</span>
+</code></pre>
+<h2 id="get-member-attribute">Get Member Attribute</h2>
+<p>The following method should really be inside .NET framework in the
+first place. It returns an attribute of specified type given the
+reflection info for a member. If an attribute with specified type
+is not found, null is returned.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)" data-toggle="tooltip" title="Extensions.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/ReflectionExt.html#T">T</a></span> <span data-toggle="tooltip" title="Extensions.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)">GetAttribute</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/ReflectionExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="System.Reflection.MemberInfo">MemberInfo</span> mi<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/ReflectionExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="typename" data-toggle="tooltip" title="System.Attribute">Attribute</span>
+		<span class="punctuation">{</span>
+			<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="System.Reflection.MemberInfo">mi</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="keyword">null</span><span class="punctuation">)</span>
+				<span class="keyword">return</span> <span class="keyword">null</span><span class="punctuation">;</span>
+			<span class="keyword" data-toggle="tooltip" title="object[]">var</span> <span id="attrs">attrs</span> <span class="punctuation">=</span> <span data-toggle="tooltip" title="System.Reflection.MemberInfo">mi</span><span class="punctuation" data-toggle="tooltip" title="System.Reflection.MemberInfo.GetCustomAttributes(System.Type, bool)">.</span><span data-toggle="tooltip" title="System.Reflection.MemberInfo.GetCustomAttributes(System.Type, bool)">GetCustomAttributes</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="System.Type">typeof</span> <span class="punctuation" data-toggle="tooltip" title="System.Type">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/ReflectionExt.html#T">T</a></span><span class="punctuation" data-toggle="tooltip" title="System.Type">)</span><span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="bool">true</span><span class="punctuation">)</span><span class="punctuation">;</span>
+			<span class="keyword">return</span> <span data-toggle="tooltip" title="object[]">attrs</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="keyword">null</span> <span class="punctuation" data-toggle="tooltip" title="bool">||</span> <span data-toggle="tooltip" title="object[]">attrs</span><span class="punctuation" data-toggle="tooltip" title="int">.</span><span data-toggle="tooltip" title="int">Length</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="number" data-toggle="tooltip" title="int">0</span> <span class="punctuation" data-toggle="tooltip" title="T">?</span> <span class="keyword">null</span> <span class="punctuation" data-toggle="tooltip" title="T">:</span> <span data-toggle="tooltip" title="object[]">attrs</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.IEnumerable.Cast<T>()">.</span><span data-toggle="tooltip" title="System.Collections.IEnumerable.Cast<T>()">Cast</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/ReflectionExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Single<T>()">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Single<T>()">Single</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<h2 id="is-an-object-instance-of-a-generic-type">Is an Object Instance of a Generic Type</h2>
+<p>The method below checks if the object int the first argument position
+is an instance of generic type whose reflection info is given in the
+second argument.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.ReflectionExt.IsInstanceOfGenericType(object, System.Type)" data-toggle="tooltip" title="Extensions.ReflectionExt.IsInstanceOfGenericType(object, System.Type)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.ReflectionExt.IsInstanceOfGenericType(object, System.Type)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="Extensions.ReflectionExt.IsInstanceOfGenericType(object, System.Type)">IsInstanceOfGenericType</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="object">object</span> obj<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.Type">Type</span> type<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="keyword">return</span> <span data-toggle="tooltip" title="object">obj</span><span class="punctuation" data-toggle="tooltip" title="object.GetType()">.</span><span data-toggle="tooltip" title="object.GetType()">GetType</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="System.Type.GetGenericTypeDefinition()">.</span><span data-toggle="tooltip" title="System.Type.GetGenericTypeDefinition()">GetGenericTypeDefinition</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span data-toggle="tooltip" title="System.Type">type</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+	<span class="punctuation">}</span>
+<span class="punctuation">}</span>
+</code></pre>
+
+				</div>
+							</div>
+        </div>
+    </div>
+    
+    <footer class="panel-footer text-center">
+        <p>footer</p>
+    </footer>
+
+
+    
+    <script src="../bootstrap/js/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../sidebar/sidebar.js"></script>
+    <script src="../syntax-highlight/syntax.js"></script>
+</body>
+</html>
