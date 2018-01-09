@@ -28,7 +28,7 @@ namespace Extensions
 			return attrs == null || attrs.Length == 0 ? null : attrs.Cast<T> ().Single ();
 		}
 		/*
-		## Is an Object Instance of a Generic Type 
+		## Is Object an Instance of a Generic Type 
 
 		The method below checks if the object int the first argument position
 		is an instance of generic type whose reflection info is given in the

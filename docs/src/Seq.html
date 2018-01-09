@@ -8,14 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Seq - projectname</title>
+    <title>Seq - ExtensionCord</title>
 
 	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="../sidebar/sidebar.min.css" />
-<link rel="stylesheet" href="../css/book.min.css" />
-<link rel="stylesheet" href="../syntax-highlight/monokai.min.css" />
+<link rel="stylesheet" href="../css/modern.min.css" />
+<link rel="stylesheet" href="../syntax-highlight/coding-horror.min.css" />
 <link rel="stylesheet" href="../mermaid/mermaid.css" />
 
 </head>
@@ -31,13 +31,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.html">projectname</a>
+                <a class="navbar-brand" href="../index.html">ExtensionCord</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="github"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
-                    <li><a href="download"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
+                    <li><a href="https://github.com/johtela/ExtensionCord"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
+                    <li><a href="https://github.com/johtela/ExtensionCord/releases"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
                     <li><a href="../License.html">License</a></li>
                 </ul>
             </div>
@@ -62,19 +62,83 @@
             </div>
             <div class="panel-body main-menu">
                 <ul>
+	<li><a href="../index.html">Home</a></li>
+	<ul>
+		<li>ExtensionCord home page.</li>
+	</ul>
+	<li><a href="../src/ArrayExt.html">ArrayExt</a></li>
+	<ul>
+		<li>Methods that help accessing and modifying arrays.</li>
+	</ul>
+	<li><a href="../src/BoolExt.html">BoolExt</a></li>
+	<ul>
+		<li>Extension methods for booleans.</li>
+	</ul>
+	<li><a href="../src/Either.html">Either</a></li>
+	<ul>
+		<li>Generic class that can contain one of two possible values.</li>
+	</ul>
+	<li><a href="../src/EnumerableExt.html">EnumerableExt</a></li>
+	<ul>
+		<li>A lot of extenion methods for the <code>IEnumerable</code> interface.</li>
+	</ul>
+	<li><a href="../src/Fun.html">Fun</a></li>
+	<ul>
+		<li>Static class that contains methods for generic delegates <code>Func</code> and <code>Action</code>.</li>
+	</ul>
+	<li><a href="../src/NumExt.html">NumExt</a></li>
+	<ul>
+		<li>Extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
+	</ul>
+	<li><a href="../src/ObjectExt.html">ObjectExt</a></li>
+	<ul>
+		<li>Few generic extension methods which work with any type.</li>
+	</ul>
+	<li><a href="../src/Params.html">Params</a></li>
+	<ul>
+		<li>Base class for key-value collections.</li>
+	</ul>
+	<li><a href="../src/ReflectionExt.html">ReflectionExt</a></li>
+	<ul>
+		<li>Extends classes related to reflection.</li>
+	</ul>
+	<li><a href="../src/Seq.html" class="selected">Seq</a></li>
+	<ul>
+		<li>Minimal implementation of an immutable, singly-linked list.</li>
+	</ul>
+	<li><a href="../src/StringExt.html">StringExt</a></li>
+	<ul>
+		<li>Methods that help string manipulation.</li>
+	</ul>
+	<li><a href="../src/TupleExt.html">TupleExt</a></li>
+	<ul>
+		<li>Extends tuples with a couple of helper methods.</li>
+	</ul>
 </ul>
             </div>
         </div>
 
             </div>
 			<div class="col-md-9">
-								<div id="static-content" class="markdown">
+				<ul class="pager">
+	<li class="previous"><a href="../src/ReflectionExt.html">Previous: ReflectionExt</a></li>
+	<li class="next"><a href="../src/StringExt.html">Next: StringExt</a></li>
+</ul>
+				<div id="static-content" class="markdown">
 					<h1 id="immutable-singly-linked-list">Immutable Singly Linked List</h1>
 <p>The data structure that is employed by practically every functional programming
 language is singly linked list. Operations defined for the list are pure which
 makes the list immutable. None of the operations modify the existing list, but
 always return a new version of it. Structural sharing makes these operations
 efficient.</p>
+<p>The figure below depicts two sequences [1, 2, 3] and [4, 2, 3] which share the
+same suffix [2, 3].</p>
+<div class="mermaid">graph LR
+    A(First = 1) -->|Rest| B(First = 2)
+    B -->|Rest| C(First = 3)
+    C -->|Rest| D[null]
+	E(First = 4) -->|Rest| B
+</div>
 <p>Since this data structure is useful in many algorithms and .NET framework does
 not provide one out-of-the-box, we define a minimal implementation here. We
 could use the
@@ -99,8 +163,8 @@ a similar abstraction, but inherently mutable.</p>
 </code></pre>
 <h3 id="first-and-rest">First and Rest</h3>
 <p>The data structure has two parts: the first item (commonly also called
-as <em>head</em>) and the rest of the sequence (<em>tail</em>). The rest part is
-another sequence, which makes the structure is recursive. If the rest
+as <em>head</em>) and the rest of the sequence (<em>tail</em>). The rest points to
+another sequence, which makes the data structure recursive. If the rest
 is <code>null</code>, then we are at the end of the sequence. An empty sequence
 is represented simply by <code>null</code>.</p>
 <pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq<T>.First">public</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span> First <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.First.get">get</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.First.get">;</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.First.set">private</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.First.set">set</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.First.set">;</span> <span class="punctuation">}</span>
@@ -114,7 +178,7 @@ is represented simply by <code>null</code>.</p>
 </code></pre>
 <h3 id="the-operator">The | Operator</h3>
 <p>The pipe <code>|</code> operator constructs a new sequence by prepending a new
-item at the front. This is a <em>O(1)</em> operation since the rest part
+item at the front. This is a <span class="math">O(1)</span> operation since the rest part
 of the existing sequence is used as-is. Internally this operation
 uses the static <code>Cons</code> constructor.</p>
 <pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq<T>.operator |(T, Extensions.Seq<T>)" data-toggle="tooltip" title="Extensions.Seq<T>.operator |(T, Extensions.Seq<T>)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.operator |(T, Extensions.Seq<T>)">static</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>.operator |(T, Extensions.Seq<T>)">operator</span> <span class="punctuation" data-toggle="tooltip" title="Extensions.Seq<T>.operator |(T, Extensions.Seq<T>)">|</span><span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span> first<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> rest<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> 
@@ -215,7 +279,7 @@ overflow exception.</p>
 		<span class="punctuation">}</span>
 </code></pre>
 <h3 id="searching-for-an-item">Searching for an Item</h3>
-<p>Searching is also a trivial operation, but <em>O(n)</em> in complexity.</p>
+<p>Searching is also a trivial operation, but <span class="math">O(n)</span> in complexity.</p>
 <pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.Seq.Contains<T>(Extensions.Seq<T>, T)" data-toggle="tooltip" title="Extensions.Seq.Contains<T>(Extensions.Seq<T>, T)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Seq.Contains<T>(Extensions.Seq<T>, T)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="Extensions.Seq.Contains<T>(Extensions.Seq<T>, T)">Contains</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="Extensions.Seq<T>"><a href="../src/Seq.html#Extensions.Seq<T>">Seq</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span><span class="punctuation">&gt;</span> seq<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Seq.html#T">T</a></span> item<span class="punctuation">)</span>
 		<span class="punctuation">{</span>
 			<span class="keyword" data-toggle="tooltip" title="Extensions.Seq<T>">var</span> <span id="s">s</span> <span class="punctuation">=</span> <span data-toggle="tooltip" title="Extensions.Seq<T>">seq</span><span class="punctuation">;</span>
@@ -228,12 +292,16 @@ overflow exception.</p>
 </code></pre>
 
 				</div>
-							</div>
+				<ul class="pager">
+	<li class="previous"><a href="../src/ReflectionExt.html">Previous: ReflectionExt</a></li>
+	<li class="next"><a href="../src/StringExt.html">Next: StringExt</a></li>
+</ul>
+			</div>
         </div>
     </div>
     
     <footer class="panel-footer text-center">
-        <p>footer</p>
+        <p>Copyright © 2018 Tommi Johtela</p>
     </footer>
 
 
@@ -242,5 +310,13 @@ overflow exception.</p>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../sidebar/sidebar.js"></script>
     <script src="../syntax-highlight/syntax.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        extensions: ["jsMath2jax.js"]
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML'></script>
+	<script src="../mermaid/mermaid.min.js"></script>
+	<script>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

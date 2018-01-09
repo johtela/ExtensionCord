@@ -1,4 +1,17 @@
-﻿# ExtensionCord - Useful Extensions for .NET Types
+﻿---
+ProjectName: ExtensionCord
+GitHub: https://github.com/johtela/ExtensionCord
+Download: https://github.com/johtela/ExtensionCord/releases
+Footer: "Copyright © 2018 Tommi Johtela"
+ShowDescriptionsInToc: true
+MarkdownStyle: modern
+SyntaxHighlight: coding-horror
+UseDiagrams: true
+DiagramStyle: mermaid
+UseMath: true
+---
+![Logo](images/extension-cord.svg){.img-responsive .center-block}
+# ExtensionCord - Useful Extensions for .NET Types
 
 This assembly contains useful extension methods and helper classes for standard .NET types. They have 
 came in handy in many projects I have authored in the past. So, I gave them a home in their own assembly 
@@ -27,5 +40,5 @@ also written.
   with collection initializers.
 * [ReflectionExt](src/ReflectionExt.html) extends classes related to reflection.
 * [Seq](src/Seq.html) is a minimal implementation of an immutable, singly-linked list.
-* [StringExt](src/StringExt.html) has some methdods that help string manipulation.
+* [StringExt](src/StringExt.html) has some methods that help string manipulation.
 * [TupleExt](src/TupleExt.html) extends tuples with a couple of helper methods.

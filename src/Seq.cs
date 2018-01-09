@@ -7,6 +7,17 @@ makes the list immutable. None of the operations modify the existing list, but
 always return a new version of it. Structural sharing makes these operations 
 efficient.
 
+The figure below depicts two sequences [1, 2, 3] and [4, 2, 3] which share the 
+same suffix [2, 3].
+
+```mermaid
+graph LR
+    A(First = 1) -->|Rest| B(First = 2)
+    B -->|Rest| C(First = 3)
+    C -->|Rest| D[null]
+	E(First = 4) -->|Rest| B
+```
+
 Since this data structure is useful in many algorithms and .NET framework does 
 not provide one out-of-the-box, we define a minimal implementation here. We 
 could use the 
@@ -35,8 +46,8 @@ namespace Extensions
 		### First and Rest
 
 		The data structure has two parts: the first item (commonly also called
-		as _head_) and the rest of the sequence (_tail_). The rest part is 
-		another sequence, which makes the structure is recursive. If the rest 
+		as _head_) and the rest of the sequence (_tail_). The rest points to 
+		another sequence, which makes the data structure recursive. If the rest 
 		is `null`, then we are at the end of the sequence. An empty sequence 
 		is represented simply by `null`.
 		*/
@@ -52,7 +63,7 @@ namespace Extensions
 		### The | Operator
 
 		The pipe `|` operator constructs a new sequence by prepending a new 
-		item at the front. This is a _O(1)_ operation since the rest part
+		item at the front. This is a $O(1)$ operation since the rest part
 		of the existing sequence is used as-is. Internally this operation 
 		uses the static `Cons` constructor.
 		*/
@@ -171,7 +182,7 @@ namespace Extensions
 		/*
 		### Searching for an Item
 
-		Searching is also a trivial operation, but _O(n)_ in complexity.
+		Searching is also a trivial operation, but $O(n)$ in complexity.
 		*/
 		public static bool Contains<T> (this Seq<T> seq, T item)
 		{
