@@ -1,5 +1,5 @@
 ﻿/*
-# Array extensions
+# Array Extensions
 
 This class contains extension methods for arrays. Most of the them are paremeterized by the
 array item type, so they effectively work with any array.

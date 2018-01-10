@@ -4,7 +4,7 @@ GitHub: https://github.com/johtela/ExtensionCord
 Download: https://github.com/johtela/ExtensionCord/releases
 Footer: "Copyright © 2018 Tommi Johtela"
 ShowDescriptionsInToc: true
-MarkdownStyle: modern
+MarkdownStyle: plain
 SyntaxHighlight: coding-horror
 UseDiagrams: true
 DiagramStyle: mermaid
