@@ -7,7 +7,7 @@ So, the static methods defined in the `Fun`class below, are not actually extensi
 methods. Anyhow, they are helper methods that either take or return generic `Func` 
 and `Action` delegates.
 */
-namespace Extensions
+namespace ExtensionCord
 {
 	using System;
 

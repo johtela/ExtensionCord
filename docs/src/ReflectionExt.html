@@ -1,5 +1,14 @@
 
 
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +20,11 @@
     <title>ReflectionExt - ExtensionCord</title>
 
 	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    
+
+
+
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="../sidebar/sidebar.min.css" />
 <link rel="stylesheet" href="../css/plain.min.css" />
@@ -36,9 +49,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="https://github.com/johtela/ExtensionCord"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
-                    <li><a href="https://github.com/johtela/ExtensionCord/releases"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
-                    <li><a href="../License.html">License</a></li>
+					<li><a href="https://github.com/johtela/ExtensionCord"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
                 </ul>
             </div>
         </div>
@@ -48,6 +59,10 @@
         <div class="row">
             <div class="col-md-3 hidden-xs hidden-sm">
                 
+
+
+
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>On This Page</h4>
@@ -61,66 +76,122 @@
                 <h4>Table of Contents</h4>
             </div>
             <div class="panel-body main-menu">
-                <ul>
+                
+<ul>
+
 	<li><a href="../index.html">Home</a></li>
+
 	<ul>
+
 		<li>ExtensionCord home page.</li>
+
 	</ul>
+
 	<li><a href="../src/ArrayExt.html">ArrayExt</a></li>
+
 	<ul>
+
 		<li>Methods that help accessing and modifying arrays.</li>
+
 	</ul>
+
 	<li><a href="../src/BoolExt.html">BoolExt</a></li>
+
 	<ul>
+
 		<li>Extension methods for booleans.</li>
+
 	</ul>
+
 	<li><a href="../src/Either.html">Either</a></li>
+
 	<ul>
+
 		<li>Generic class that can contain one of two possible values.</li>
+
 	</ul>
+
 	<li><a href="../src/EnumerableExt.html">EnumerableExt</a></li>
+
 	<ul>
+
 		<li>A lot of extenion methods for the <code>IEnumerable</code> interface.</li>
+
 	</ul>
+
 	<li><a href="../src/Fun.html">Fun</a></li>
+
 	<ul>
+
 		<li>Static class that contains methods for generic delegates <code>Func</code> and <code>Action</code>.</li>
+
 	</ul>
+
 	<li><a href="../src/NumExt.html">NumExt</a></li>
+
 	<ul>
+
 		<li>Extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
+
 	</ul>
+
 	<li><a href="../src/ObjectExt.html">ObjectExt</a></li>
+
 	<ul>
+
 		<li>Few generic extension methods which work with any type.</li>
+
 	</ul>
+
 	<li><a href="../src/Params.html">Params</a></li>
+
 	<ul>
+
 		<li>Base class for key-value collections.</li>
+
 	</ul>
+
 	<li><a href="../src/ReflectionExt.html" class="selected">ReflectionExt</a></li>
+
 	<ul>
+
 		<li>Extends classes related to reflection.</li>
+
 	</ul>
+
 	<li><a href="../src/Seq.html">Seq</a></li>
+
 	<ul>
+
 		<li>Minimal implementation of an immutable, singly-linked list.</li>
+
 	</ul>
+
 	<li><a href="../src/StringExt.html">StringExt</a></li>
+
 	<ul>
+
 		<li>Methods that help string manipulation.</li>
+
 	</ul>
+
 	<li><a href="../src/TupleExt.html">TupleExt</a></li>
+
 	<ul>
+
 		<li>Extends tuples with a couple of helper methods.</li>
+
 	</ul>
+
 </ul>
+
             </div>
         </div>
 
             </div>
 			<div class="col-md-9">
-				<ul class="pager">
+				
+<ul class="pager">
 	<li class="previous"><a href="../src/Params.html">Previous: Params</a></li>
 	<li class="next"><a href="../src/Seq.html">Next: Seq</a></li>
 </ul>
@@ -128,13 +199,13 @@
 					<h1 id="reflection-extensions">Reflection Extensions</h1>
 <p>The <code>ReflectionExt</code> class provides few extensions useful with reflection
 objects.</p>
-<pre class="csharp"><code class="csharp"><span class="keyword" id="Extensions">namespace</span> Extensions
+<pre class="csharp"><code class="csharp"><span class="keyword" id="ExtensionCord">namespace</span> ExtensionCord
 <span class="punctuation">{</span>
 	<span class="keyword">using</span> System<span class="punctuation">;</span>
 	<span class="keyword">using</span> System<span class="punctuation">.</span>Linq<span class="punctuation">;</span>
 	<span class="keyword">using</span> System<span class="punctuation">.</span>Reflection<span class="punctuation">;</span>
 
-	<span class="keyword" id="Extensions.ReflectionExt">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="typename">ReflectionExt</span>
+	<span class="keyword" id="ExtensionCord.ReflectionExt">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="typename">ReflectionExt</span>
 	<span class="punctuation">{</span>
 </code></pre>
 <h2 id="get-member-attribute">Get Member Attribute</h2>
@@ -142,7 +213,7 @@ objects.</p>
 first place. It returns an attribute of specified type given the
 reflection info for a member. If an attribute with specified type
 is not found, null is returned.</p>
-<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)" data-toggle="tooltip" title="Extensions.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/ReflectionExt.html#T">T</a></span> <span data-toggle="tooltip" title="Extensions.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)">GetAttribute</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/ReflectionExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="System.Reflection.MemberInfo">MemberInfo</span> mi<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/ReflectionExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="typename" data-toggle="tooltip" title="System.Attribute">Attribute</span>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)" data-toggle="tooltip" title="ExtensionCord.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/ReflectionExt.html#T">T</a></span> <span data-toggle="tooltip" title="ExtensionCord.ReflectionExt.GetAttribute<T>(System.Reflection.MemberInfo)">GetAttribute</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/ReflectionExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="System.Reflection.MemberInfo">MemberInfo</span> mi<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/ReflectionExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="typename" data-toggle="tooltip" title="System.Attribute">Attribute</span>
 		<span class="punctuation">{</span>
 			<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="System.Reflection.MemberInfo">mi</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="keyword">null</span><span class="punctuation">)</span>
 				<span class="keyword">return</span> <span class="keyword">null</span><span class="punctuation">;</span>
@@ -154,7 +225,7 @@ is not found, null is returned.</p>
 <p>The method below checks if the object int the first argument position
 is an instance of generic type whose reflection info is given in the
 second argument.</p>
-<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.ReflectionExt.IsInstanceOfGenericType(object, System.Type)" data-toggle="tooltip" title="Extensions.ReflectionExt.IsInstanceOfGenericType(object, System.Type)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.ReflectionExt.IsInstanceOfGenericType(object, System.Type)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="Extensions.ReflectionExt.IsInstanceOfGenericType(object, System.Type)">IsInstanceOfGenericType</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="object">object</span> obj<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.Type">Type</span> type<span class="punctuation">)</span>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.ReflectionExt.IsInstanceOfGenericType(object, System.Type)" data-toggle="tooltip" title="ExtensionCord.ReflectionExt.IsInstanceOfGenericType(object, System.Type)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.ReflectionExt.IsInstanceOfGenericType(object, System.Type)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="ExtensionCord.ReflectionExt.IsInstanceOfGenericType(object, System.Type)">IsInstanceOfGenericType</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="object">object</span> obj<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.Type">Type</span> type<span class="punctuation">)</span>
 		<span class="punctuation">{</span>
 			<span class="keyword">return</span> <span data-toggle="tooltip" title="object">obj</span><span class="punctuation" data-toggle="tooltip" title="object.GetType()">.</span><span data-toggle="tooltip" title="object.GetType()">GetType</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="System.Type.GetGenericTypeDefinition()">.</span><span data-toggle="tooltip" title="System.Type.GetGenericTypeDefinition()">GetGenericTypeDefinition</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span data-toggle="tooltip" title="System.Type">type</span><span class="punctuation">;</span>
 		<span class="punctuation">}</span>
@@ -163,7 +234,8 @@ second argument.</p>
 </code></pre>
 
 				</div>
-				<ul class="pager">
+				
+<ul class="pager">
 	<li class="previous"><a href="../src/Params.html">Previous: Params</a></li>
 	<li class="next"><a href="../src/Seq.html">Next: Seq</a></li>
 </ul>
@@ -177,16 +249,22 @@ second argument.</p>
 
 
     
+
+
+
+
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../sidebar/sidebar.js"></script>
     <script src="../syntax-highlight/syntax.js"></script>
+
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
         extensions: ["jsMath2jax.js"]
         });
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML'></script>
+
 	<script src="../mermaid/mermaid.min.js"></script>
 	<script>mermaid.initialize({startOnLoad:true});</script>
 </body>

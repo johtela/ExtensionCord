@@ -1,7 +1,6 @@
 ﻿---
 ProjectName: ExtensionCord
 GitHub: https://github.com/johtela/ExtensionCord
-Download: https://github.com/johtela/ExtensionCord/releases
 Footer: "Copyright © 2018 Tommi Johtela"
 ShowDescriptionsInToc: true
 MarkdownStyle: plain

@@ -4,14 +4,14 @@
 Although .NET framework contains already a lot of extension methods for the 
 `IEnumerable` interface we can still come up with new ones.
 */
-namespace Extensions
+namespace ExtensionCord
 {
 	using System;
 	using System.Collections;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Runtime.CompilerServices;
-	using Extensions;
+	using ExtensionCord;
 
 	public static class EnumerableExt
 	{

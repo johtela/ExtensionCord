@@ -4,7 +4,7 @@
 The `ReflectionExt` class provides few extensions useful with reflection 
 objects.
 */
-namespace Extensions
+namespace ExtensionCord
 {
 	using System;
 	using System.Linq;

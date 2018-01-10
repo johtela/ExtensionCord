@@ -3,7 +3,7 @@
 
 The boolean type currently has only one extension method.
 */
-namespace Extensions
+namespace ExtensionCord
 {
 	using System.Runtime.CompilerServices;
 

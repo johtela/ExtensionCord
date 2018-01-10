@@ -8,7 +8,7 @@ class was developed before the extension methods were supported in C#,
 all its methods are regular static methods. We, however, are exploiting
 the extension methods wherever possible
 */
-namespace Extensions
+namespace ExtensionCord
 {
 	using System;
 	using System.Linq;

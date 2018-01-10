@@ -12,7 +12,7 @@ as discriminated union. Pattern matching is typically used to decide what to do 
 either case. Since pattern matching and case expressions are not (really) available 
 in C#, we provide matching as an extension method.
 */
-namespace Extensions
+namespace ExtensionCord
 {
     using System;
 	/*

@@ -5,7 +5,7 @@ The most general set of extension methods in this library is defined
 here. The methods in this class can be used basically with any .NET
 type.
 */
-namespace Extensions
+namespace ExtensionCord
 {
 	using System.Linq;
 

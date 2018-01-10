@@ -1,5 +1,14 @@
 
 
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +20,11 @@
     <title>BoolExt - ExtensionCord</title>
 
 	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    
+
+
+
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="../sidebar/sidebar.min.css" />
 <link rel="stylesheet" href="../css/plain.min.css" />
@@ -36,9 +49,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="https://github.com/johtela/ExtensionCord"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
-                    <li><a href="https://github.com/johtela/ExtensionCord/releases"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
-                    <li><a href="../License.html">License</a></li>
+					<li><a href="https://github.com/johtela/ExtensionCord"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
                 </ul>
             </div>
         </div>
@@ -48,6 +59,10 @@
         <div class="row">
             <div class="col-md-3 hidden-xs hidden-sm">
                 
+
+
+
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>On This Page</h4>
@@ -61,77 +76,133 @@
                 <h4>Table of Contents</h4>
             </div>
             <div class="panel-body main-menu">
-                <ul>
+                
+<ul>
+
 	<li><a href="../index.html">Home</a></li>
+
 	<ul>
+
 		<li>ExtensionCord home page.</li>
+
 	</ul>
+
 	<li><a href="../src/ArrayExt.html">ArrayExt</a></li>
+
 	<ul>
+
 		<li>Methods that help accessing and modifying arrays.</li>
+
 	</ul>
+
 	<li><a href="../src/BoolExt.html" class="selected">BoolExt</a></li>
+
 	<ul>
+
 		<li>Extension methods for booleans.</li>
+
 	</ul>
+
 	<li><a href="../src/Either.html">Either</a></li>
+
 	<ul>
+
 		<li>Generic class that can contain one of two possible values.</li>
+
 	</ul>
+
 	<li><a href="../src/EnumerableExt.html">EnumerableExt</a></li>
+
 	<ul>
+
 		<li>A lot of extenion methods for the <code>IEnumerable</code> interface.</li>
+
 	</ul>
+
 	<li><a href="../src/Fun.html">Fun</a></li>
+
 	<ul>
+
 		<li>Static class that contains methods for generic delegates <code>Func</code> and <code>Action</code>.</li>
+
 	</ul>
+
 	<li><a href="../src/NumExt.html">NumExt</a></li>
+
 	<ul>
+
 		<li>Extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
+
 	</ul>
+
 	<li><a href="../src/ObjectExt.html">ObjectExt</a></li>
+
 	<ul>
+
 		<li>Few generic extension methods which work with any type.</li>
+
 	</ul>
+
 	<li><a href="../src/Params.html">Params</a></li>
+
 	<ul>
+
 		<li>Base class for key-value collections.</li>
+
 	</ul>
+
 	<li><a href="../src/ReflectionExt.html">ReflectionExt</a></li>
+
 	<ul>
+
 		<li>Extends classes related to reflection.</li>
+
 	</ul>
+
 	<li><a href="../src/Seq.html">Seq</a></li>
+
 	<ul>
+
 		<li>Minimal implementation of an immutable, singly-linked list.</li>
+
 	</ul>
+
 	<li><a href="../src/StringExt.html">StringExt</a></li>
+
 	<ul>
+
 		<li>Methods that help string manipulation.</li>
+
 	</ul>
+
 	<li><a href="../src/TupleExt.html">TupleExt</a></li>
+
 	<ul>
+
 		<li>Extends tuples with a couple of helper methods.</li>
+
 	</ul>
+
 </ul>
+
             </div>
         </div>
 
             </div>
 			<div class="col-md-9">
-				<ul class="pager">
+				
+<ul class="pager">
 	<li class="previous"><a href="../src/ArrayExt.html">Previous: ArrayExt</a></li>
 	<li class="next"><a href="../src/Either.html">Next: Either</a></li>
 </ul>
 				<div id="static-content" class="markdown">
 					<h1 id="extensions-for-boolean-type">Extensions for Boolean Type</h1>
 <p>The boolean type currently has only one extension method.</p>
-<pre class="csharp"><code class="csharp"><span class="keyword" id="Extensions">namespace</span> Extensions
+<pre class="csharp"><code class="csharp"><span class="keyword" id="ExtensionCord">namespace</span> ExtensionCord
 <span class="punctuation">{</span>
 	<span class="keyword">using</span> System<span class="punctuation">.</span>Runtime<span class="punctuation">.</span>CompilerServices<span class="punctuation">;</span>
 
-	<span class="keyword" id="Extensions.BoolExt">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="typename">BoolExt</span>
+	<span class="keyword" id="ExtensionCord.BoolExt">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="typename">BoolExt</span>
 	<span class="punctuation">{</span>
 </code></pre>
 <h2 id="logical-implication">Logical Implication</h2>
@@ -142,14 +213,15 @@ operator is defined mathematically as:</p>
 <p>Since this is a very simple expression replacement, we'll try to make the
 compiler inline it aggresively.</p>
 <pre class="csharp"><code class="csharp">		<span class="punctuation">[</span><span class="typename" data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplAttribute">MethodImpl</span><span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplOptions">MethodImplOptions</span><span class="punctuation" data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplOptions">.</span><span data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplOptions">AggressiveInlining</span><span class="punctuation">)</span><span class="punctuation">]</span>
-		<span class="keyword" id="Extensions.BoolExt.Implies(bool, bool)" data-toggle="tooltip" title="Extensions.BoolExt.Implies(bool, bool)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.BoolExt.Implies(bool, bool)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="Extensions.BoolExt.Implies(bool, bool)">Implies</span><span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> antecedent<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> consequent<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> 
-			<span class="punctuation" data-toggle="tooltip" title="bool">!</span><span data-toggle="tooltip" title="bool">antecedent</span> <span class="punctuation" data-toggle="tooltip" title="bool">||</span> <span data-toggle="tooltip" title="bool">consequent</span><span class="punctuation" data-toggle="tooltip" title="Extensions.BoolExt.Implies(bool, bool)">;</span>
+		<span class="keyword" id="ExtensionCord.BoolExt.Implies(bool, bool)" data-toggle="tooltip" title="ExtensionCord.BoolExt.Implies(bool, bool)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.BoolExt.Implies(bool, bool)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="ExtensionCord.BoolExt.Implies(bool, bool)">Implies</span><span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> antecedent<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> consequent<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> 
+			<span class="punctuation" data-toggle="tooltip" title="bool">!</span><span data-toggle="tooltip" title="bool">antecedent</span> <span class="punctuation" data-toggle="tooltip" title="bool">||</span> <span data-toggle="tooltip" title="bool">consequent</span><span class="punctuation" data-toggle="tooltip" title="ExtensionCord.BoolExt.Implies(bool, bool)">;</span>
 	<span class="punctuation">}</span>
 <span class="punctuation">}</span>
 </code></pre>
 
 				</div>
-				<ul class="pager">
+				
+<ul class="pager">
 	<li class="previous"><a href="../src/ArrayExt.html">Previous: ArrayExt</a></li>
 	<li class="next"><a href="../src/Either.html">Next: Either</a></li>
 </ul>
@@ -163,16 +235,22 @@ compiler inline it aggresively.</p>
 
 
     
+
+
+
+
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../sidebar/sidebar.js"></script>
     <script src="../syntax-highlight/syntax.js"></script>
+
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
         extensions: ["jsMath2jax.js"]
         });
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML'></script>
+
 	<script src="../mermaid/mermaid.min.js"></script>
 	<script>mermaid.initialize({startOnLoad:true});</script>
 </body>

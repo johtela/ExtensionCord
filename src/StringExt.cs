@@ -4,7 +4,7 @@
 The functionality of strings is fairly comprehensive in the .NET framework.
 There are some additions we can still come up with.
 */
-namespace Extensions
+namespace ExtensionCord
 {
     using System.Collections.Generic;
 	using System.Text;

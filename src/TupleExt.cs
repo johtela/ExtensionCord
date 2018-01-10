@@ -4,7 +4,7 @@
 The last set of extensions concerns tuples. These are mainly convenience 
 methods making the code manipulating tuples easier and clearer.
 */
-namespace Extensions
+namespace ExtensionCord
 {
 	using System;
 	using System.Runtime.CompilerServices;

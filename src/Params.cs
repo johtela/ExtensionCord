@@ -14,7 +14,7 @@ and values are stored in a list, the class should not be used if efficient
 retrieval based on keys is required. In that case, dictionary is a better 
 option.
 */
-namespace Extensions
+namespace ExtensionCord
 {
 	using System;
 	using System.Collections.Generic;

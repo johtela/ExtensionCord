@@ -1,5 +1,14 @@
 
 
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +20,11 @@
     <title>NumExt - ExtensionCord</title>
 
 	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    
+
+
+
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="../sidebar/sidebar.min.css" />
 <link rel="stylesheet" href="../css/plain.min.css" />
@@ -36,9 +49,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="https://github.com/johtela/ExtensionCord"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
-                    <li><a href="https://github.com/johtela/ExtensionCord/releases"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
-                    <li><a href="../License.html">License</a></li>
+					<li><a href="https://github.com/johtela/ExtensionCord"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
                 </ul>
             </div>
         </div>
@@ -48,6 +59,10 @@
         <div class="row">
             <div class="col-md-3 hidden-xs hidden-sm">
                 
+
+
+
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>On This Page</h4>
@@ -61,66 +76,122 @@
                 <h4>Table of Contents</h4>
             </div>
             <div class="panel-body main-menu">
-                <ul>
+                
+<ul>
+
 	<li><a href="../index.html">Home</a></li>
+
 	<ul>
+
 		<li>ExtensionCord home page.</li>
+
 	</ul>
+
 	<li><a href="../src/ArrayExt.html">ArrayExt</a></li>
+
 	<ul>
+
 		<li>Methods that help accessing and modifying arrays.</li>
+
 	</ul>
+
 	<li><a href="../src/BoolExt.html">BoolExt</a></li>
+
 	<ul>
+
 		<li>Extension methods for booleans.</li>
+
 	</ul>
+
 	<li><a href="../src/Either.html">Either</a></li>
+
 	<ul>
+
 		<li>Generic class that can contain one of two possible values.</li>
+
 	</ul>
+
 	<li><a href="../src/EnumerableExt.html">EnumerableExt</a></li>
+
 	<ul>
+
 		<li>A lot of extenion methods for the <code>IEnumerable</code> interface.</li>
+
 	</ul>
+
 	<li><a href="../src/Fun.html">Fun</a></li>
+
 	<ul>
+
 		<li>Static class that contains methods for generic delegates <code>Func</code> and <code>Action</code>.</li>
+
 	</ul>
+
 	<li><a href="../src/NumExt.html" class="selected">NumExt</a></li>
+
 	<ul>
+
 		<li>Extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
+
 	</ul>
+
 	<li><a href="../src/ObjectExt.html">ObjectExt</a></li>
+
 	<ul>
+
 		<li>Few generic extension methods which work with any type.</li>
+
 	</ul>
+
 	<li><a href="../src/Params.html">Params</a></li>
+
 	<ul>
+
 		<li>Base class for key-value collections.</li>
+
 	</ul>
+
 	<li><a href="../src/ReflectionExt.html">ReflectionExt</a></li>
+
 	<ul>
+
 		<li>Extends classes related to reflection.</li>
+
 	</ul>
+
 	<li><a href="../src/Seq.html">Seq</a></li>
+
 	<ul>
+
 		<li>Minimal implementation of an immutable, singly-linked list.</li>
+
 	</ul>
+
 	<li><a href="../src/StringExt.html">StringExt</a></li>
+
 	<ul>
+
 		<li>Methods that help string manipulation.</li>
+
 	</ul>
+
 	<li><a href="../src/TupleExt.html">TupleExt</a></li>
+
 	<ul>
+
 		<li>Extends tuples with a couple of helper methods.</li>
+
 	</ul>
+
 </ul>
+
             </div>
         </div>
 
             </div>
 			<div class="col-md-9">
-				<ul class="pager">
+				
+<ul class="pager">
 	<li class="previous"><a href="../src/Fun.html">Previous: Fun</a></li>
 	<li class="next"><a href="../src/ObjectExt.html">Next: ObjectExt</a></li>
 </ul>
@@ -132,19 +203,19 @@ operations and shortcuts which are missing from Math. Since the Math
 class was developed before the extension methods were supported in C#,
 all its methods are regular static methods. We, however, are exploiting
 the extension methods wherever possible</p>
-<pre class="csharp"><code class="csharp"><span class="keyword" id="Extensions">namespace</span> Extensions
+<pre class="csharp"><code class="csharp"><span class="keyword" id="ExtensionCord">namespace</span> ExtensionCord
 <span class="punctuation">{</span>
 	<span class="keyword">using</span> System<span class="punctuation">;</span>
 	<span class="keyword">using</span> System<span class="punctuation">.</span>Linq<span class="punctuation">;</span>
 
-	<span class="keyword" id="Extensions.NumExt">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="typename">NumExt</span>
+	<span class="keyword" id="ExtensionCord.NumExt">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="typename">NumExt</span>
 	<span class="punctuation">{</span>
 </code></pre>
 <h2 id="number-inside-a-range">Number Inside a Range</h2>
 <p>To check whether a number is between some minimum and maximum value,
 we define the following method.</p>
-<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.NumExt.IsBetween(int, int, int)" data-toggle="tooltip" title="Extensions.NumExt.IsBetween(int, int, int)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.NumExt.IsBetween(int, int, int)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="Extensions.NumExt.IsBetween(int, int, int)">IsBetween</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> number<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> floor<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> ceil<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> 
-			<span data-toggle="tooltip" title="int">number</span> <span class="punctuation" data-toggle="tooltip" title="bool">&gt;=</span> <span data-toggle="tooltip" title="int">floor</span> <span class="punctuation" data-toggle="tooltip" title="bool">&amp;&amp;</span> <span data-toggle="tooltip" title="int">number</span> <span class="punctuation" data-toggle="tooltip" title="bool">&lt;=</span> <span data-toggle="tooltip" title="int">ceil</span><span class="punctuation" data-toggle="tooltip" title="Extensions.NumExt.IsBetween(int, int, int)">;</span>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.NumExt.IsBetween(int, int, int)" data-toggle="tooltip" title="ExtensionCord.NumExt.IsBetween(int, int, int)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.NumExt.IsBetween(int, int, int)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.IsBetween(int, int, int)">IsBetween</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> number<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> floor<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> ceil<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> 
+			<span data-toggle="tooltip" title="int">number</span> <span class="punctuation" data-toggle="tooltip" title="bool">&gt;=</span> <span data-toggle="tooltip" title="int">floor</span> <span class="punctuation" data-toggle="tooltip" title="bool">&amp;&amp;</span> <span data-toggle="tooltip" title="int">number</span> <span class="punctuation" data-toggle="tooltip" title="bool">&lt;=</span> <span data-toggle="tooltip" title="int">ceil</span><span class="punctuation" data-toggle="tooltip" title="ExtensionCord.NumExt.IsBetween(int, int, int)">;</span>
 </code></pre>
 <h2 id="approximate-equivalence">Approximate Equivalence</h2>
 <p>The <code>==</code> operator returns true for two floating point numbers only if
@@ -157,7 +228,7 @@ their absolute difference is less than the epsilon parameter. A good
 value for the epsilon is found easiest by experimenting. The rounding
 errors accumulate, so depending on the scenario a wider margin might
 be necessary.</p>
-<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.NumExt.ApproxEquals(float, float, float)" data-toggle="tooltip" title="Extensions.NumExt.ApproxEquals(float, float, float)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.NumExt.ApproxEquals(float, float, float)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="Extensions.NumExt.ApproxEquals(float, float, float)">ApproxEquals</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="float">float</span> x<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="float">float</span> y<span class="punctuation">,</span> 
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.NumExt.ApproxEquals(float, float, float)" data-toggle="tooltip" title="ExtensionCord.NumExt.ApproxEquals(float, float, float)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.NumExt.ApproxEquals(float, float, float)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.ApproxEquals(float, float, float)">ApproxEquals</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="float">float</span> x<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="float">float</span> y<span class="punctuation">,</span> 
 			<span class="keyword" data-toggle="tooltip" title="float">float</span> epsilon <span class="punctuation">=</span> <span class="number" data-toggle="tooltip" title="float">1e-06f</span><span class="punctuation">)</span>
 		<span class="punctuation">{</span>
 			<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="float">x</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span data-toggle="tooltip" title="float">y</span><span class="punctuation">)</span>
@@ -173,7 +244,7 @@ be necessary.</p>
 				<span class="keyword">return</span> <span data-toggle="tooltip" title="float">diff</span> <span class="punctuation" data-toggle="tooltip" title="float">/</span> <span class="punctuation" data-toggle="tooltip" title="float">(</span><span data-toggle="tooltip" title="float">absX</span> <span class="punctuation" data-toggle="tooltip" title="float">+</span> <span data-toggle="tooltip" title="float">absY</span><span class="punctuation" data-toggle="tooltip" title="float">)</span> <span class="punctuation" data-toggle="tooltip" title="bool">&lt;</span> <span data-toggle="tooltip" title="float">epsilon</span><span class="punctuation">;</span>
 		<span class="punctuation">}</span>
 
-		<span class="keyword" id="Extensions.NumExt.ApproxEquals(double, double, double)" data-toggle="tooltip" title="Extensions.NumExt.ApproxEquals(double, double, double)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.NumExt.ApproxEquals(double, double, double)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="Extensions.NumExt.ApproxEquals(double, double, double)">ApproxEquals</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="double">double</span> x<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="double">double</span> y<span class="punctuation">,</span>
+		<span class="keyword" id="ExtensionCord.NumExt.ApproxEquals(double, double, double)" data-toggle="tooltip" title="ExtensionCord.NumExt.ApproxEquals(double, double, double)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.NumExt.ApproxEquals(double, double, double)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.ApproxEquals(double, double, double)">ApproxEquals</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="double">double</span> x<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="double">double</span> y<span class="punctuation">,</span>
 			<span class="keyword" data-toggle="tooltip" title="double">double</span> epsilon <span class="punctuation">=</span> <span class="number" data-toggle="tooltip" title="double">1e-11</span><span class="punctuation">)</span>
 		<span class="punctuation">{</span>
 			<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="double">x</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span data-toggle="tooltip" title="double">y</span><span class="punctuation">)</span>
@@ -191,13 +262,13 @@ be necessary.</p>
 </code></pre>
 <p>The generic version of <code>ApproxEquals</code> accepts any value type, but throws
 an exception if the type is not <code>float</code> or <code>double</code>.</p>
-<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.NumExt.ApproxEquals<T>(T, T)" data-toggle="tooltip" title="Extensions.NumExt.ApproxEquals<T>(T, T)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.NumExt.ApproxEquals<T>(T, T)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="Extensions.NumExt.ApproxEquals<T>(T, T)">ApproxEquals</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> x<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> y<span class="punctuation">)</span>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.NumExt.ApproxEquals<T>(T, T)" data-toggle="tooltip" title="ExtensionCord.NumExt.ApproxEquals<T>(T, T)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.NumExt.ApproxEquals<T>(T, T)">static</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.ApproxEquals<T>(T, T)">ApproxEquals</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> x<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> y<span class="punctuation">)</span>
 			<span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="keyword">struct</span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.IEquatable<T>">IEquatable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span>
 		<span class="punctuation">{</span>
 			<span class="keyword">if</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="System.Type">typeof</span> <span class="punctuation" data-toggle="tooltip" title="System.Type">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation" data-toggle="tooltip" title="System.Type">)</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="keyword" data-toggle="tooltip" title="System.Type">typeof</span> <span class="punctuation" data-toggle="tooltip" title="System.Type">(</span><span class="keyword" data-toggle="tooltip" title="float">float</span><span class="punctuation" data-toggle="tooltip" title="System.Type">)</span><span class="punctuation">)</span>
-				<span class="keyword">return</span> <span data-toggle="tooltip" title="Extensions.NumExt.ApproxEquals(float, float, float)"><a href="../src/NumExt.html#Extensions.NumExt.ApproxEquals(float, float, float)">ApproxEquals</a></span> <span class="punctuation">(</span><span class="punctuation" data-toggle="tooltip" title="float">(</span><span class="keyword" data-toggle="tooltip" title="float">float</span><span class="punctuation" data-toggle="tooltip" title="float">)</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="keyword" data-toggle="tooltip" title="object">object</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span data-toggle="tooltip" title="T">x</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span class="punctuation">,</span> <span class="punctuation" data-toggle="tooltip" title="float">(</span><span class="keyword" data-toggle="tooltip" title="float">float</span><span class="punctuation" data-toggle="tooltip" title="float">)</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="keyword" data-toggle="tooltip" title="object">object</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span data-toggle="tooltip" title="T">y</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span class="punctuation">,</span> <span class="number" data-toggle="tooltip" title="float">1e-06f</span><span class="punctuation">)</span><span class="punctuation">;</span>
+				<span class="keyword">return</span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.ApproxEquals(float, float, float)"><a href="../src/NumExt.html#ExtensionCord.NumExt.ApproxEquals(float, float, float)">ApproxEquals</a></span> <span class="punctuation">(</span><span class="punctuation" data-toggle="tooltip" title="float">(</span><span class="keyword" data-toggle="tooltip" title="float">float</span><span class="punctuation" data-toggle="tooltip" title="float">)</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="keyword" data-toggle="tooltip" title="object">object</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span data-toggle="tooltip" title="T">x</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span class="punctuation">,</span> <span class="punctuation" data-toggle="tooltip" title="float">(</span><span class="keyword" data-toggle="tooltip" title="float">float</span><span class="punctuation" data-toggle="tooltip" title="float">)</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="keyword" data-toggle="tooltip" title="object">object</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span data-toggle="tooltip" title="T">y</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span class="punctuation">,</span> <span class="number" data-toggle="tooltip" title="float">1e-06f</span><span class="punctuation">)</span><span class="punctuation">;</span>
 			<span class="keyword">else</span> <span class="keyword">if</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="System.Type">typeof</span> <span class="punctuation" data-toggle="tooltip" title="System.Type">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation" data-toggle="tooltip" title="System.Type">)</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="keyword" data-toggle="tooltip" title="System.Type">typeof</span> <span class="punctuation" data-toggle="tooltip" title="System.Type">(</span><span class="keyword" data-toggle="tooltip" title="double">double</span><span class="punctuation" data-toggle="tooltip" title="System.Type">)</span><span class="punctuation">)</span>
-				<span class="keyword">return</span> <span data-toggle="tooltip" title="Extensions.NumExt.ApproxEquals(double, double, double)"><a href="../src/NumExt.html#Extensions.NumExt.ApproxEquals(double, double, double)">ApproxEquals</a></span> <span class="punctuation">(</span><span class="punctuation" data-toggle="tooltip" title="double">(</span><span class="keyword" data-toggle="tooltip" title="double">double</span><span class="punctuation" data-toggle="tooltip" title="double">)</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="keyword" data-toggle="tooltip" title="object">object</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span data-toggle="tooltip" title="T">x</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span class="punctuation">,</span> <span class="punctuation" data-toggle="tooltip" title="double">(</span><span class="keyword" data-toggle="tooltip" title="double">double</span><span class="punctuation" data-toggle="tooltip" title="double">)</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="keyword" data-toggle="tooltip" title="object">object</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span data-toggle="tooltip" title="T">y</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span class="punctuation">,</span> <span class="number" data-toggle="tooltip" title="double">1e-11</span><span class="punctuation">)</span><span class="punctuation">;</span>
+				<span class="keyword">return</span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.ApproxEquals(double, double, double)"><a href="../src/NumExt.html#ExtensionCord.NumExt.ApproxEquals(double, double, double)">ApproxEquals</a></span> <span class="punctuation">(</span><span class="punctuation" data-toggle="tooltip" title="double">(</span><span class="keyword" data-toggle="tooltip" title="double">double</span><span class="punctuation" data-toggle="tooltip" title="double">)</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="keyword" data-toggle="tooltip" title="object">object</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span data-toggle="tooltip" title="T">x</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span class="punctuation">,</span> <span class="punctuation" data-toggle="tooltip" title="double">(</span><span class="keyword" data-toggle="tooltip" title="double">double</span><span class="punctuation" data-toggle="tooltip" title="double">)</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="punctuation" data-toggle="tooltip" title="object">(</span><span class="keyword" data-toggle="tooltip" title="object">object</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span data-toggle="tooltip" title="T">y</span><span class="punctuation" data-toggle="tooltip" title="object">)</span><span class="punctuation">,</span> <span class="number" data-toggle="tooltip" title="double">1e-11</span><span class="punctuation">)</span><span class="punctuation">;</span>
 			<span class="keyword">else</span>
 				<span class="keyword">throw</span> <span class="keyword" data-toggle="tooltip" title="System.ArgumentException">new</span> <span class="typename">ArgumentException</span> <span class="punctuation">(</span>
 					<span class="string" data-toggle="tooltip" title="string">&quot;This method is only defined for floats and doubles.&quot;</span><span class="punctuation">)</span><span class="punctuation">;</span>
@@ -208,12 +279,12 @@ an exception if the type is not <code>float</code> or <code>double</code>.</p>
 When you want to find the min/max of multiple values, you can use the methods
 below. Instead of overloading, theit genericity is achieved through the
 <code>IComparable</code> interface.</p>
-<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.NumExt.Min<T>(params T[])" data-toggle="tooltip" title="Extensions.NumExt.Min<T>(params T[])">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.NumExt.Min<T>(params T[])">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span data-toggle="tooltip" title="Extensions.NumExt.Min<T>(params T[])">Min</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">params</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> values<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="keyword">struct</span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.IComparable<T>">IComparable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.NumExt.Min<T>(params T[])" data-toggle="tooltip" title="ExtensionCord.NumExt.Min<T>(params T[])">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.NumExt.Min<T>(params T[])">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.Min<T>(params T[])">Min</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">params</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> values<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="keyword">struct</span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.IComparable<T>">IComparable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span>
 		<span class="punctuation">{</span>
 			<span class="keyword">return</span> <span data-toggle="tooltip" title="T[]">values</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Min<T>()">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Min<T>()">Min</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
 		<span class="punctuation">}</span>
 
-		<span class="keyword" id="Extensions.NumExt.Max<T>(params T[])" data-toggle="tooltip" title="Extensions.NumExt.Max<T>(params T[])">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.NumExt.Max<T>(params T[])">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span data-toggle="tooltip" title="Extensions.NumExt.Max<T>(params T[])">Max</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">params</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> values<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="keyword">struct</span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.IComparable<T>">IComparable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span>
+		<span class="keyword" id="ExtensionCord.NumExt.Max<T>(params T[])" data-toggle="tooltip" title="ExtensionCord.NumExt.Max<T>(params T[])">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.NumExt.Max<T>(params T[])">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.Max<T>(params T[])">Max</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">params</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> values<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="keyword">struct</span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.IComparable<T>">IComparable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span>
 		<span class="punctuation">{</span>
 			<span class="keyword">return</span> <span data-toggle="tooltip" title="T[]">values</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Max<T>()">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Max<T>()">Max</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
 		<span class="punctuation">}</span>
@@ -221,7 +292,7 @@ below. Instead of overloading, theit genericity is achieved through the
 <h2 id="count-number-of-bits-set">Count Number of Bits Set</h2>
 <p>If you need to know the number of 1 bits in an integer, you can get it
 with the method below.</p>
-<pre class="csharp"><code class="csharp">		<span class="keyword" id="Extensions.NumExt.NumberOfBitsSet(int)" data-toggle="tooltip" title="Extensions.NumExt.NumberOfBitsSet(int)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.NumExt.NumberOfBitsSet(int)">static</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> <span data-toggle="tooltip" title="Extensions.NumExt.NumberOfBitsSet(int)">NumberOfBitsSet</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> x<span class="punctuation">)</span>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.NumExt.NumberOfBitsSet(int)" data-toggle="tooltip" title="ExtensionCord.NumExt.NumberOfBitsSet(int)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.NumExt.NumberOfBitsSet(int)">static</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.NumberOfBitsSet(int)">NumberOfBitsSet</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> x<span class="punctuation">)</span>
 		<span class="punctuation">{</span>
 			<span class="keyword" data-toggle="tooltip" title="int">var</span> <span id="result">result</span> <span class="punctuation">=</span> <span class="number" data-toggle="tooltip" title="int">0</span><span class="punctuation">;</span>
 			<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="int">int</span> <span id="i">i</span> <span class="punctuation">=</span> <span class="number" data-toggle="tooltip" title="int">0</span><span class="punctuation">;</span> <span data-toggle="tooltip" title="int">i</span> <span class="punctuation" data-toggle="tooltip" title="bool">&lt;</span> <span class="number" data-toggle="tooltip" title="int">32</span><span class="punctuation">;</span> <span data-toggle="tooltip" title="int">i</span><span class="punctuation" data-toggle="tooltip" title="int">++</span><span class="punctuation">)</span>
@@ -237,7 +308,8 @@ with the method below.</p>
 </code></pre>
 
 				</div>
-				<ul class="pager">
+				
+<ul class="pager">
 	<li class="previous"><a href="../src/Fun.html">Previous: Fun</a></li>
 	<li class="next"><a href="../src/ObjectExt.html">Next: ObjectExt</a></li>
 </ul>
@@ -251,16 +323,22 @@ with the method below.</p>
 
 
     
+
+
+
+
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../sidebar/sidebar.js"></script>
     <script src="../syntax-highlight/syntax.js"></script>
+
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
         extensions: ["jsMath2jax.js"]
         });
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML'></script>
+
 	<script src="../mermaid/mermaid.min.js"></script>
 	<script>mermaid.initialize({startOnLoad:true});</script>
 </body>

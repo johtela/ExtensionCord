@@ -26,7 +26,7 @@ Nuget package provided by Microsoft, but it brings with it a long chain of
 dependencies. So, we will roll our own implementation to limit the dependencies 
 to .NET framework only.
 */
-namespace Extensions
+namespace ExtensionCord
 {
 	using System;
 	using System.Collections;

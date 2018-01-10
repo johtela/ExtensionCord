@@ -1,5 +1,14 @@
 
 
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +20,11 @@
     <title>Either - ExtensionCord</title>
 
 	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    
+
+
+
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="../sidebar/sidebar.min.css" />
 <link rel="stylesheet" href="../css/plain.min.css" />
@@ -36,9 +49,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="https://github.com/johtela/ExtensionCord"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
-                    <li><a href="https://github.com/johtela/ExtensionCord/releases"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
-                    <li><a href="../License.html">License</a></li>
+					<li><a href="https://github.com/johtela/ExtensionCord"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
                 </ul>
             </div>
         </div>
@@ -48,6 +59,10 @@
         <div class="row">
             <div class="col-md-3 hidden-xs hidden-sm">
                 
+
+
+
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>On This Page</h4>
@@ -61,66 +76,122 @@
                 <h4>Table of Contents</h4>
             </div>
             <div class="panel-body main-menu">
-                <ul>
+                
+<ul>
+
 	<li><a href="../index.html">Home</a></li>
+
 	<ul>
+
 		<li>ExtensionCord home page.</li>
+
 	</ul>
+
 	<li><a href="../src/ArrayExt.html">ArrayExt</a></li>
+
 	<ul>
+
 		<li>Methods that help accessing and modifying arrays.</li>
+
 	</ul>
+
 	<li><a href="../src/BoolExt.html">BoolExt</a></li>
+
 	<ul>
+
 		<li>Extension methods for booleans.</li>
+
 	</ul>
+
 	<li><a href="../src/Either.html" class="selected">Either</a></li>
+
 	<ul>
+
 		<li>Generic class that can contain one of two possible values.</li>
+
 	</ul>
+
 	<li><a href="../src/EnumerableExt.html">EnumerableExt</a></li>
+
 	<ul>
+
 		<li>A lot of extenion methods for the <code>IEnumerable</code> interface.</li>
+
 	</ul>
+
 	<li><a href="../src/Fun.html">Fun</a></li>
+
 	<ul>
+
 		<li>Static class that contains methods for generic delegates <code>Func</code> and <code>Action</code>.</li>
+
 	</ul>
+
 	<li><a href="../src/NumExt.html">NumExt</a></li>
+
 	<ul>
+
 		<li>Extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
+
 	</ul>
+
 	<li><a href="../src/ObjectExt.html">ObjectExt</a></li>
+
 	<ul>
+
 		<li>Few generic extension methods which work with any type.</li>
+
 	</ul>
+
 	<li><a href="../src/Params.html">Params</a></li>
+
 	<ul>
+
 		<li>Base class for key-value collections.</li>
+
 	</ul>
+
 	<li><a href="../src/ReflectionExt.html">ReflectionExt</a></li>
+
 	<ul>
+
 		<li>Extends classes related to reflection.</li>
+
 	</ul>
+
 	<li><a href="../src/Seq.html">Seq</a></li>
+
 	<ul>
+
 		<li>Minimal implementation of an immutable, singly-linked list.</li>
+
 	</ul>
+
 	<li><a href="../src/StringExt.html">StringExt</a></li>
+
 	<ul>
+
 		<li>Methods that help string manipulation.</li>
+
 	</ul>
+
 	<li><a href="../src/TupleExt.html">TupleExt</a></li>
+
 	<ul>
+
 		<li>Extends tuples with a couple of helper methods.</li>
+
 	</ul>
+
 </ul>
+
             </div>
         </div>
 
             </div>
 			<div class="col-md-9">
-				<ul class="pager">
+				
+<ul class="pager">
 	<li class="previous"><a href="../src/BoolExt.html">Previous: BoolExt</a></li>
 	<li class="next"><a href="../src/EnumerableExt.html">Next: EnumerableExt</a></li>
 </ul>
@@ -135,7 +206,7 @@ Hence the name.</p>
 as discriminated union. Pattern matching is typically used to decide what to do in
 either case. Since pattern matching and case expressions are not (really) available
 in C#, we provide matching as an extension method.</p>
-<pre class="csharp"><code class="csharp"><span class="keyword" id="Extensions">namespace</span> Extensions
+<pre class="csharp"><code class="csharp"><span class="keyword" id="ExtensionCord">namespace</span> ExtensionCord
 <span class="punctuation">{</span>
     <span class="keyword">using</span> System<span class="punctuation">;</span>
 </code></pre>
@@ -143,9 +214,9 @@ in C#, we provide matching as an extension method.</p>
 <p>If you try to access an invalid choice an exception is thrown. We define a specific
 exception type for this, since it might be convenient sometimes to handle the case
 matching through exceptions.</p>
-<pre class="csharp"><code class="csharp">    <span class="keyword" id="Extensions.EitherException">public</span> <span class="keyword">class</span> <span class="typename">EitherException</span> <span class="punctuation">:</span> <span class="typename" data-toggle="tooltip" title="System.Exception">Exception</span>
+<pre class="csharp"><code class="csharp">    <span class="keyword" id="ExtensionCord.EitherException">public</span> <span class="keyword">class</span> <span class="typename">EitherException</span> <span class="punctuation">:</span> <span class="typename" data-toggle="tooltip" title="System.Exception">Exception</span>
     <span class="punctuation">{</span>
-        <span class="keyword" id="Extensions.EitherException.EitherException(string)" data-toggle="tooltip" title="Extensions.EitherException.EitherException(string)">public</span> <span data-toggle="tooltip" title="Extensions.EitherException.EitherException(string)">EitherException</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="string">string</span> choice<span class="punctuation">)</span> <span class="punctuation" data-toggle="tooltip" title="void">:</span> <span class="keyword" data-toggle="tooltip" title="void">base</span> <span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;The choice &#39;{0}&#39; is not valid.&quot;</span><span class="punctuation">)</span>
+        <span class="keyword" id="ExtensionCord.EitherException.EitherException(string)" data-toggle="tooltip" title="ExtensionCord.EitherException.EitherException(string)">public</span> <span data-toggle="tooltip" title="ExtensionCord.EitherException.EitherException(string)">EitherException</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="string">string</span> choice<span class="punctuation">)</span> <span class="punctuation" data-toggle="tooltip" title="void">:</span> <span class="keyword" data-toggle="tooltip" title="void">base</span> <span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;The choice &#39;{0}&#39; is not valid.&quot;</span><span class="punctuation">)</span>
         <span class="punctuation">{</span> <span class="punctuation">}</span>
     <span class="punctuation">}</span>
 </code></pre>
@@ -156,48 +227,48 @@ we name the propeties <code>Left</code> and <code>Right</code> and define them a
 inner sub-classes implement one of them, and throw an exception from the other
 one. So, internally there are three different classes in play, but only one of
 them exposed to the outside.</p>
-<pre class="csharp"><code class="csharp">	<span class="keyword" id="Extensions.Either<T, U>">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="typename">Either</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename"><a href="../src/Either.html#U">U</a></span><span class="punctuation">&gt;</span>
+<pre class="csharp"><code class="csharp">	<span class="keyword" id="ExtensionCord.Either<T, U>">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="typename">Either</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename"><a href="../src/Either.html#U">U</a></span><span class="punctuation">&gt;</span>
     <span class="punctuation">{</span>
-        <span class="keyword" id="Extensions.Either<T, U>.Left">public</span> <span class="keyword">abstract</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> Left <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>.Left.get">get</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Either<T, U>.Left.get">;</span> <span class="punctuation">}</span>
-        <span class="keyword" id="Extensions.Either<T, U>.Right">public</span> <span class="keyword">abstract</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> Right <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>.Right.get">get</span><span class="punctuation" data-toggle="tooltip" title="Extensions.Either<T, U>.Right.get">;</span> <span class="punctuation">}</span>
+        <span class="keyword" id="ExtensionCord.Either<T, U>.Left">public</span> <span class="keyword">abstract</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> Left <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Left.get">get</span><span class="punctuation" data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Left.get">;</span> <span class="punctuation">}</span>
+        <span class="keyword" id="ExtensionCord.Either<T, U>.Right">public</span> <span class="keyword">abstract</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> Right <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Right.get">get</span><span class="punctuation" data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Right.get">;</span> <span class="punctuation">}</span>
 
-        <span class="keyword" id="Extensions.Either<T, U>._Left">private</span> <span class="keyword">class</span> <span class="typename">_Left</span> <span class="punctuation">:</span> <span class="typename" data-toggle="tooltip" title="Extensions.Either<T, U>"><a href="../src/Either.html#Extensions.Either<T, U>">Either</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span><span class="punctuation">&gt;</span>
+        <span class="keyword" id="ExtensionCord.Either<T, U>._Left">private</span> <span class="keyword">class</span> <span class="typename">_Left</span> <span class="punctuation">:</span> <span class="typename" data-toggle="tooltip" title="ExtensionCord.Either<T, U>"><a href="../src/Either.html#ExtensionCord.Either<T, U>">Either</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span><span class="punctuation">&gt;</span>
         <span class="punctuation">{</span>
-            <span class="keyword">private</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> <span id="Extensions.Either<T, U>._Left._left">_left</span><span class="punctuation">;</span>
+            <span class="keyword">private</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> <span id="ExtensionCord.Either<T, U>._Left._left">_left</span><span class="punctuation">;</span>
 
-            <span class="keyword" id="Extensions.Either<T, U>._Left._Left(T)" data-toggle="tooltip" title="Extensions.Either<T, U>._Left._Left(T)">public</span> <span data-toggle="tooltip" title="Extensions.Either<T, U>._Left._Left(T)">_Left</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> left<span class="punctuation">)</span>
+            <span class="keyword" id="ExtensionCord.Either<T, U>._Left._Left(T)" data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Left._Left(T)">public</span> <span data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Left._Left(T)">_Left</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> left<span class="punctuation">)</span>
             <span class="punctuation">{</span>
-                <span data-toggle="tooltip" title="T"><a href="../src/Either.html#Extensions.Either<T, U>._Left._left">_left</a></span> <span class="punctuation" data-toggle="tooltip" title="T">=</span> <span data-toggle="tooltip" title="T">left</span><span class="punctuation">;</span>
+                <span data-toggle="tooltip" title="T"><a href="../src/Either.html#ExtensionCord.Either<T, U>._Left._left">_left</a></span> <span class="punctuation" data-toggle="tooltip" title="T">=</span> <span data-toggle="tooltip" title="T">left</span><span class="punctuation">;</span>
             <span class="punctuation">}</span>
 
-            <span class="keyword" id="Extensions.Either<T, U>._Left.Left">public</span> <span class="keyword">override</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> Left
+            <span class="keyword" id="ExtensionCord.Either<T, U>._Left.Left">public</span> <span class="keyword">override</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> Left
             <span class="punctuation">{</span>
-                <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>._Left.Left.get">get</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span data-toggle="tooltip" title="T"><a href="../src/Either.html#Extensions.Either<T, U>._Left._left">_left</a></span><span class="punctuation">;</span> <span class="punctuation">}</span>
+                <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Left.Left.get">get</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span data-toggle="tooltip" title="T"><a href="../src/Either.html#ExtensionCord.Either<T, U>._Left._left">_left</a></span><span class="punctuation">;</span> <span class="punctuation">}</span>
             <span class="punctuation">}</span>
 
-            <span class="keyword" id="Extensions.Either<T, U>._Left.Right">public</span> <span class="keyword">override</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> Right
+            <span class="keyword" id="ExtensionCord.Either<T, U>._Left.Right">public</span> <span class="keyword">override</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> Right
             <span class="punctuation">{</span>
-                <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>._Left.Right.get">get</span> <span class="punctuation">{</span> <span class="keyword">throw</span> <span class="keyword" data-toggle="tooltip" title="Extensions.EitherException">new</span> <span class="typename"><a href="../src/Either.html#Extensions.EitherException">EitherException</a></span> <span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;Right&quot;</span><span class="punctuation">)</span><span class="punctuation">;</span> <span class="punctuation">}</span>
+                <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Left.Right.get">get</span> <span class="punctuation">{</span> <span class="keyword">throw</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.EitherException">new</span> <span class="typename"><a href="../src/Either.html#ExtensionCord.EitherException">EitherException</a></span> <span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;Right&quot;</span><span class="punctuation">)</span><span class="punctuation">;</span> <span class="punctuation">}</span>
             <span class="punctuation">}</span>
         <span class="punctuation">}</span>
 
-        <span class="keyword" id="Extensions.Either<T, U>._Right">private</span> <span class="keyword">class</span> <span class="typename">_Right</span> <span class="punctuation">:</span> <span class="typename" data-toggle="tooltip" title="Extensions.Either<T, U>"><a href="../src/Either.html#Extensions.Either<T, U>">Either</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span><span class="punctuation">&gt;</span>
+        <span class="keyword" id="ExtensionCord.Either<T, U>._Right">private</span> <span class="keyword">class</span> <span class="typename">_Right</span> <span class="punctuation">:</span> <span class="typename" data-toggle="tooltip" title="ExtensionCord.Either<T, U>"><a href="../src/Either.html#ExtensionCord.Either<T, U>">Either</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span><span class="punctuation">&gt;</span>
         <span class="punctuation">{</span>
-            <span class="keyword">private</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> <span id="Extensions.Either<T, U>._Right._right">_right</span><span class="punctuation">;</span>
+            <span class="keyword">private</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> <span id="ExtensionCord.Either<T, U>._Right._right">_right</span><span class="punctuation">;</span>
 
-            <span class="keyword" id="Extensions.Either<T, U>._Right._Right(U)" data-toggle="tooltip" title="Extensions.Either<T, U>._Right._Right(U)">public</span> <span data-toggle="tooltip" title="Extensions.Either<T, U>._Right._Right(U)">_Right</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> right<span class="punctuation">)</span>
+            <span class="keyword" id="ExtensionCord.Either<T, U>._Right._Right(U)" data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Right._Right(U)">public</span> <span data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Right._Right(U)">_Right</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> right<span class="punctuation">)</span>
             <span class="punctuation">{</span>
-                <span data-toggle="tooltip" title="U"><a href="../src/Either.html#Extensions.Either<T, U>._Right._right">_right</a></span> <span class="punctuation" data-toggle="tooltip" title="U">=</span> <span data-toggle="tooltip" title="U">right</span><span class="punctuation">;</span>
+                <span data-toggle="tooltip" title="U"><a href="../src/Either.html#ExtensionCord.Either<T, U>._Right._right">_right</a></span> <span class="punctuation" data-toggle="tooltip" title="U">=</span> <span data-toggle="tooltip" title="U">right</span><span class="punctuation">;</span>
             <span class="punctuation">}</span>
 
-            <span class="keyword" id="Extensions.Either<T, U>._Right.Left">public</span> <span class="keyword">override</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> Left
+            <span class="keyword" id="ExtensionCord.Either<T, U>._Right.Left">public</span> <span class="keyword">override</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> Left
             <span class="punctuation">{</span>
-                <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>._Right.Left.get">get</span> <span class="punctuation">{</span> <span class="keyword">throw</span> <span class="keyword" data-toggle="tooltip" title="Extensions.EitherException">new</span> <span class="typename"><a href="../src/Either.html#Extensions.EitherException">EitherException</a></span> <span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;Left&quot;</span><span class="punctuation">)</span><span class="punctuation">;</span> <span class="punctuation">}</span>
+                <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Right.Left.get">get</span> <span class="punctuation">{</span> <span class="keyword">throw</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.EitherException">new</span> <span class="typename"><a href="../src/Either.html#ExtensionCord.EitherException">EitherException</a></span> <span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;Left&quot;</span><span class="punctuation">)</span><span class="punctuation">;</span> <span class="punctuation">}</span>
             <span class="punctuation">}</span>
 
-            <span class="keyword" id="Extensions.Either<T, U>._Right.Right">public</span> <span class="keyword">override</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> Right
+            <span class="keyword" id="ExtensionCord.Either<T, U>._Right.Right">public</span> <span class="keyword">override</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> Right
             <span class="punctuation">{</span>
-                <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>._Right.Right.get">get</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span data-toggle="tooltip" title="U"><a href="../src/Either.html#Extensions.Either<T, U>._Right._right">_right</a></span><span class="punctuation">;</span> <span class="punctuation">}</span>
+                <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Right.Right.get">get</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span data-toggle="tooltip" title="U"><a href="../src/Either.html#ExtensionCord.Either<T, U>._Right._right">_right</a></span><span class="punctuation">;</span> <span class="punctuation">}</span>
             <span class="punctuation">}</span>
         <span class="punctuation">}</span>
 </code></pre>
@@ -205,46 +276,47 @@ them exposed to the outside.</p>
 <p>There are naturally two ways to construct a value of the Either&lt;T, U&gt;
 type. You can give the left or right value, and based on that the
 correct private sub-class is created.</p>
-<pre class="csharp"><code class="csharp">        <span class="keyword" id="Extensions.Either<T, U>.Create(T)" data-toggle="tooltip" title="Extensions.Either<T, U>.Create(T)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>.Create(T)">static</span> <span class="typename" data-toggle="tooltip" title="Extensions.Either<T, U>"><a href="../src/Either.html#Extensions.Either<T, U>">Either</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="Extensions.Either<T, U>.Create(T)">Create</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> value<span class="punctuation">)</span>
+<pre class="csharp"><code class="csharp">        <span class="keyword" id="ExtensionCord.Either<T, U>.Create(T)" data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Create(T)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Create(T)">static</span> <span class="typename" data-toggle="tooltip" title="ExtensionCord.Either<T, U>"><a href="../src/Either.html#ExtensionCord.Either<T, U>">Either</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Create(T)">Create</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span> value<span class="punctuation">)</span>
         <span class="punctuation">{</span>
-            <span class="keyword">return</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>._Left">new</span> <span class="typename"><a href="../src/Either.html#Extensions.Either<T, U>._Left">_Left</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="T">value</span><span class="punctuation">)</span><span class="punctuation">;</span>
+            <span class="keyword">return</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Left">new</span> <span class="typename"><a href="../src/Either.html#ExtensionCord.Either<T, U>._Left">_Left</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="T">value</span><span class="punctuation">)</span><span class="punctuation">;</span>
         <span class="punctuation">}</span>
 
-        <span class="keyword" id="Extensions.Either<T, U>.Create(U)" data-toggle="tooltip" title="Extensions.Either<T, U>.Create(U)">public</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>.Create(U)">static</span> <span class="typename" data-toggle="tooltip" title="Extensions.Either<T, U>"><a href="../src/Either.html#Extensions.Either<T, U>">Either</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="Extensions.Either<T, U>.Create(U)">Create</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> value<span class="punctuation">)</span>
+        <span class="keyword" id="ExtensionCord.Either<T, U>.Create(U)" data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Create(U)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Create(U)">static</span> <span class="typename" data-toggle="tooltip" title="ExtensionCord.Either<T, U>"><a href="../src/Either.html#ExtensionCord.Either<T, U>">Either</a></span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Create(U)">Create</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span> value<span class="punctuation">)</span>
         <span class="punctuation">{</span>
-            <span class="keyword">return</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>._Right">new</span> <span class="typename"><a href="../src/Either.html#Extensions.Either<T, U>._Right">_Right</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="U">value</span><span class="punctuation">)</span><span class="punctuation">;</span>
+            <span class="keyword">return</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Right">new</span> <span class="typename"><a href="../src/Either.html#ExtensionCord.Either<T, U>._Right">_Right</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="U">value</span><span class="punctuation">)</span><span class="punctuation">;</span>
         <span class="punctuation">}</span>
 </code></pre>
 <h2 id="pattern-matching">Pattern Matching</h2>
 <p>Typically you want to do different things depending on which option
 is active. For that reason, we define a method that calls different
 delegate based on the actual type of the class.</p>
-<pre class="csharp"><code class="csharp">        <span class="keyword" id="Extensions.Either<T, U>.Match<V>(System.Func<T, V>, System.Func<U, V>)" data-toggle="tooltip" title="Extensions.Either<T, U>.Match<V>(System.Func<T, V>, System.Func<U, V>)">public</span> <span class="typename" data-toggle="tooltip" title="V"><a href="../src/Either.html#V">V</a></span> <span data-toggle="tooltip" title="Extensions.Either<T, U>.Match<V>(System.Func<T, V>, System.Func<U, V>)">Match</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Either.html#V">V</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="System.Func<T, V>">Func</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="V"><a href="../src/Either.html#V">V</a></span><span class="punctuation">&gt;</span> left<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.Func<U, V>">Func</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="V"><a href="../src/Either.html#V">V</a></span><span class="punctuation">&gt;</span> right<span class="punctuation">)</span>
+<pre class="csharp"><code class="csharp">        <span class="keyword" id="ExtensionCord.Either<T, U>.Match<V>(System.Func<T, V>, System.Func<U, V>)" data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Match<V>(System.Func<T, V>, System.Func<U, V>)">public</span> <span class="typename" data-toggle="tooltip" title="V"><a href="../src/Either.html#V">V</a></span> <span data-toggle="tooltip" title="ExtensionCord.Either<T, U>.Match<V>(System.Func<T, V>, System.Func<U, V>)">Match</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/Either.html#V">V</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="System.Func<T, V>">Func</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/Either.html#T">T</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="V"><a href="../src/Either.html#V">V</a></span><span class="punctuation">&gt;</span> left<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.Func<U, V>">Func</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="U"><a href="../src/Either.html#U">U</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="V"><a href="../src/Either.html#V">V</a></span><span class="punctuation">&gt;</span> right<span class="punctuation">)</span>
         <span class="punctuation">{</span>
-            <span class="keyword">if</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>">this</span> <span class="keyword" data-toggle="tooltip" title="bool">is</span> <span class="typename" data-toggle="tooltip" title="Extensions.Either<T, U>._Left"><a href="../src/Either.html#Extensions.Either<T, U>._Left">_Left</a></span><span class="punctuation">)</span>
-                <span class="keyword">return</span> <span data-toggle="tooltip" title="System.Func<T, V>">left</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="T"><a href="../src/Either.html#Extensions.Either<T, U>.Left">Left</a></span><span class="punctuation">)</span><span class="punctuation">;</span>
+            <span class="keyword">if</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>">this</span> <span class="keyword" data-toggle="tooltip" title="bool">is</span> <span class="typename" data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Left"><a href="../src/Either.html#ExtensionCord.Either<T, U>._Left">_Left</a></span><span class="punctuation">)</span>
+                <span class="keyword">return</span> <span data-toggle="tooltip" title="System.Func<T, V>">left</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="T"><a href="../src/Either.html#ExtensionCord.Either<T, U>.Left">Left</a></span><span class="punctuation">)</span><span class="punctuation">;</span>
             <span class="keyword">else</span>
-                <span class="keyword">return</span> <span data-toggle="tooltip" title="System.Func<U, V>">right</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="U"><a href="../src/Either.html#Extensions.Either<T, U>.Right">Right</a></span><span class="punctuation">)</span><span class="punctuation">;</span>
+                <span class="keyword">return</span> <span data-toggle="tooltip" title="System.Func<U, V>">right</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="U"><a href="../src/Either.html#ExtensionCord.Either<T, U>.Right">Right</a></span><span class="punctuation">)</span><span class="punctuation">;</span>
         <span class="punctuation">}</span>
 </code></pre>
 <h2 id="checking-which-choice-is-active">Checking Which Choice is Active</h2>
 <p>To check if the left or right branch is active, we define two
 properties to test that.</p>
-<pre class="csharp"><code class="csharp">        <span class="keyword" id="Extensions.Either<T, U>.IsLeft">public</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> IsLeft
+<pre class="csharp"><code class="csharp">        <span class="keyword" id="ExtensionCord.Either<T, U>.IsLeft">public</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> IsLeft
         <span class="punctuation">{</span>
-            <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>.IsLeft.get">get</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>">this</span> <span class="keyword" data-toggle="tooltip" title="bool">is</span> <span class="typename" data-toggle="tooltip" title="Extensions.Either<T, U>._Left"><a href="../src/Either.html#Extensions.Either<T, U>._Left">_Left</a></span><span class="punctuation">;</span> <span class="punctuation">}</span>
+            <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>.IsLeft.get">get</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>">this</span> <span class="keyword" data-toggle="tooltip" title="bool">is</span> <span class="typename" data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Left"><a href="../src/Either.html#ExtensionCord.Either<T, U>._Left">_Left</a></span><span class="punctuation">;</span> <span class="punctuation">}</span>
         <span class="punctuation">}</span>
 
-        <span class="keyword" id="Extensions.Either<T, U>.IsRight">public</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> IsRight
+        <span class="keyword" id="ExtensionCord.Either<T, U>.IsRight">public</span> <span class="keyword" data-toggle="tooltip" title="bool">bool</span> IsRight
         <span class="punctuation">{</span>
-            <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>.IsRight.get">get</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword" data-toggle="tooltip" title="Extensions.Either<T, U>">this</span> <span class="keyword" data-toggle="tooltip" title="bool">is</span> <span class="typename" data-toggle="tooltip" title="Extensions.Either<T, U>._Right"><a href="../src/Either.html#Extensions.Either<T, U>._Right">_Right</a></span><span class="punctuation">;</span> <span class="punctuation">}</span>
+            <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>.IsRight.get">get</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.Either<T, U>">this</span> <span class="keyword" data-toggle="tooltip" title="bool">is</span> <span class="typename" data-toggle="tooltip" title="ExtensionCord.Either<T, U>._Right"><a href="../src/Either.html#ExtensionCord.Either<T, U>._Right">_Right</a></span><span class="punctuation">;</span> <span class="punctuation">}</span>
         <span class="punctuation">}</span>
     <span class="punctuation">}</span>
 <span class="punctuation">}</span>
 </code></pre>
 
 				</div>
-				<ul class="pager">
+				
+<ul class="pager">
 	<li class="previous"><a href="../src/BoolExt.html">Previous: BoolExt</a></li>
 	<li class="next"><a href="../src/EnumerableExt.html">Next: EnumerableExt</a></li>
 </ul>
@@ -258,16 +330,22 @@ properties to test that.</p>
 
 
     
+
+
+
+
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../sidebar/sidebar.js"></script>
     <script src="../syntax-highlight/syntax.js"></script>
+
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
         extensions: ["jsMath2jax.js"]
         });
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML'></script>
+
 	<script src="../mermaid/mermaid.min.js"></script>
 	<script>mermaid.initialize({startOnLoad:true});</script>
 </body>
