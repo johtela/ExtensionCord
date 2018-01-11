@@ -11,7 +11,7 @@
     file: src\BoolExt.cs
     desc: Extension methods for booleans.
 
-  - page: Either Class
+  - page: Either Type
     file: src\Either.cs
     desc: Generic class that can contain one of two possible values.
 
