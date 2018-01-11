@@ -122,8 +122,8 @@ namespace ExtensionCord
 		method to get the string representation of the indvidual items. The opening and closing 
 		bracket, as well as the separator placed between the items, are given as parameters. 
 		*/
-		public static string ToString<T> (this T[] array, string openBracket, string closeBracket, 
-            string separator)
+		public static string ToString<T> (this T[] array, string openBracket, 
+			string closeBracket, string separator)
 		{
 			StringBuilder sb = new StringBuilder (openBracket);
 
@@ -196,8 +196,8 @@ namespace ExtensionCord
 		The alogithm that generates the combinations is very similar to the permutation algorithm.
 		It recursively selects each possible combination and uses only one result vector.
 		*/
-		private static IEnumerable<T[]> EnumerateCombinations<T>(this IEnumerable<T>[] values, T[] result,
-			int index)
+		private static IEnumerable<T[]> EnumerateCombinations<T>(this IEnumerable<T>[] values, 
+			T[] result, int index)
 		{
 			foreach (var x in values[index])
 			{

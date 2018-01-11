@@ -31,6 +31,7 @@ namespace ExtensionCord
 	using System;
 	using System.Collections;
 	using System.Collections.Generic;
+	using System.Runtime.CompilerServices;
 	using System.Text;
 	/*
 	## The Seq<T> Class
@@ -67,8 +68,9 @@ namespace ExtensionCord
 		of the existing sequence is used as-is. Internally this operation 
 		uses the static `Cons` constructor.
 		*/
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Seq<T> operator |(T first, Seq<T> rest) => 
-			Seq.Cons(first, rest);
+			new Seq<T> (first, rest);
 		/*
 		### Constructing from IEnumerable
 
@@ -141,6 +143,7 @@ namespace ExtensionCord
 
 		The test for empty sequence just checks if the parameter is `null`.
 		*/
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool IsEmpty<T> (this Seq<T> seq)
 		{
 			return seq == null;
@@ -152,12 +155,14 @@ namespace ExtensionCord
 		and the rest of the sequence. The second parameter can be omitted to 
 		create a sequence with a single item.
 		*/
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Seq<T> Cons<T> (T first, Seq<T> rest = null) => 
 			new Seq<T> (first, rest);
 		/*
 		The following is a convenience method that extends IEnumerable
 		with a way to convert it to sequence.
 		*/
+		[MethodImpl (MethodImplOptions.AggressiveInlining)]
 		public static Seq<T> ToSeq<T> (this IEnumerable<T> enumerable)
 		{
 			return Seq<T>.FromEnumerable (enumerable);

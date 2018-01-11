@@ -3,50 +3,50 @@
     file: index.md
     desc: ExtensionCord home page.
 
-  - page: ArrayExt
+  - page: Array Extensions
     file: src\ArrayExt.cs
     desc: Methods that help accessing and modifying arrays.
 
-  - page: BoolExt
+  - page: Boolean Extentensions
     file: src\BoolExt.cs
     desc: Extension methods for booleans.
 
-  - page: Either
+  - page: Either Class
     file: src\Either.cs
     desc: Generic class that can contain one of two possible values.
 
-  - page: EnumerableExt
+  - page: Enumerable Extensions
     file: src\EnumerableExt.cs
     desc: A lot of extenion methods for the `IEnumerable` interface.
 
-  - page: Fun
+  - page: Function Extensions
     file: src\Fun.cs
     desc: Static class that contains methods for generic delegates `Func` and `Action`.
 
-  - page: NumExt
+  - page: Number Extensions
     file: src\NumExt.cs
     desc: Extends number types `int`, `float`, and `double`.
 
-  - page: ObjectExt
+  - page: Object Extension
     file: src\ObjectExt.cs
     desc: Few generic extension methods which work with any type.
 
-  - page: Params
+  - page: Params Collection
     file: src\Params.cs
     desc: Base class for key-value collections.
 
-  - page: ReflectionExt
+  - page: Reflection Extensions
     file: src\ReflectionExt.cs
     desc: Extends classes related to reflection.
 
-  - page: Seq
+  - page: Seq Data Structure
     file: src\Seq.cs
     desc: Minimal implementation of an immutable, singly-linked list.
 
-  - page: StringExt
+  - page: String Extensions
     file: src\StringExt.cs
     desc: Methods that help string manipulation.
 
-  - page: TupleExt
+  - page: Tuple Extensions
     file: src\TupleExt.cs
     desc: Extends tuples with a couple of helper methods.

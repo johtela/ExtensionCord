@@ -56,6 +56,7 @@
     <Compile Include="src\TupleExt.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ExtensionCord.nuspec" />
     <None Include="index.md" />
     <None Include="TOC.yml" />
   </ItemGroup>
