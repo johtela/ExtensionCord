@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ExtensionCord")]
 [assembly: AssemblyDescription("Extensions for standard .NET types.")]
 [assembly: AssemblyCopyright("Copyright © 2018 Tommi Johtela")]
+[assembly: AssemblyCompany("Tommi Johtela")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from

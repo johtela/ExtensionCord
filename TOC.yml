@@ -50,3 +50,7 @@
   - page: Tuple Extensions
     file: src\TupleExt.cs
     desc: Extends tuples with a couple of helper methods.
+
+  - page: License
+    file: License.md
+    desc: License and terms of use.

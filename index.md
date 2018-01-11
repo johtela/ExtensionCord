@@ -2,6 +2,7 @@
 ProjectName: ExtensionCord
 GitHub: https://github.com/johtela/ExtensionCord
 Footer: "Copyright © 2018 Tommi Johtela"
+License: License.html
 ShowDescriptionsInToc: true
 MarkdownStyle: plain
 SyntaxHighlight: coding-horror

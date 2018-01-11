@@ -58,12 +58,13 @@
   <ItemGroup>
     <None Include="ExtensionCord.nuspec" />
     <None Include="index.md" />
+    <None Include="License.md" />
     <None Include="TOC.yml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="docs\images\extension-cord.png" />
-    <Content Include="docs\images\extension-cord.svg" />
+    <None Include="docs\images\extension-cord.png" />
+    <None Include="docs\images\extension-cord.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
