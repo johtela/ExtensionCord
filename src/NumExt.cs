@@ -23,6 +23,12 @@ namespace ExtensionCord
 		*/
 		public static bool IsBetween (this int number, int floor, int ceil) => 
 			number >= floor && number <= ceil;
+
+		public static bool IsBetween (this float number, float floor, float ceil) =>
+			number >= floor && number <= ceil;
+
+		public static bool IsBetween (this double number, double floor, double ceil) =>
+			number >= floor && number <= ceil;
 		/*
 		## Approximate Equivalence
 
