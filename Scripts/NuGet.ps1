@@ -15,7 +15,7 @@ function PackRelease ()
 
 function DeployLocal ()
 {
-	PackDebug
+	PackRelease
 	if (Test-Path $projectdir)
 	{
 		Remove-Item $projectdir -Recurse
