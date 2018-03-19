@@ -54,3 +54,7 @@
   - page: License
     file: License.md
     desc: License and terms of use.
+
+  - page: README
+    file: README.md
+    desc: Basic information about the project.
