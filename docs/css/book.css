@@ -1,8 +1,9 @@
-﻿.markdown {
+﻿@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Roboto+Mono:400,700');
+.markdown {
   color: #444;
-  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
-  font-size: 1.25em;
-  line-height: 1.75em;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  line-height: 1.8em;
 }
 .markdown a {
   color: #0645ad;
@@ -26,6 +27,10 @@
 }
 .markdown p {
   margin: 1em 0;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 .markdown img {
   max-width: 100%;
@@ -49,11 +54,27 @@
   border-bottom: 0.1em #EEE solid;
 }
 .markdown blockquote {
-  color: #666666;
+  color: #666;
   font-style: italic;
-  margin: 0;
-  padding-left: 3em;
-  border-left: 0.5em #EEE solid;
+  font-size: 17px;
+  margin: 0 0 0 5%;
+  text-align: justify;
+  border-left: 5px solid #ffa258;
+  padding: 10px 25px 10px 35px;
+  box-shadow: 2px 2px 15px #ccc;
+  background-color: #f9f4ee;
+  max-width: 90%;
+}
+.markdown blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: "\201C";
+  font-size: 50px;
+  color: #ccc;
+  position: relative;
+  left: -40px;
+  top: 20px;
+  height: 0;
 }
 .markdown hr {
   display: block;
@@ -66,10 +87,12 @@
 }
 .markdown code,
 .markdown pre {
-  font-size: 0.95em;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 95%;
   tab-size: 4;
   overflow-x: auto;
   overflow-y: hidden;
+  hyphens: none;
 }
 .markdown pre {
   white-space: pre-wrap;

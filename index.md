@@ -1,16 +1,4 @@
-﻿---
-ProjectName: ExtensionCord
-GitHub: https://github.com/johtela/ExtensionCord
-Footer: "Copyright © 2018 Tommi Johtela"
-License: License.html
-ShowDescriptionsInToc: true
-MarkdownStyle: plain
-SyntaxHighlight: coding-horror
-UseDiagrams: true
-DiagramStyle: mermaid
-UseMath: true
----
-![Logo](images/extension-cord.svg){.img-responsive .center-block}
+﻿![Logo](images/extension-cord.svg){.img-responsive .center-block}
 # ExtensionCord - Useful Extensions for .NET Types
 
 This assembly contains useful extension methods and helper classes for standard .NET types. They have 

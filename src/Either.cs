@@ -32,7 +32,7 @@ namespace ExtensionCord
 
 	The type contains two properties that represent the different choices of values.
 	Either one of them is available at any given time. For a lack of better terms, 
-	we name the propeties `Left` and `Right` and define them as abstract. Private, 
+	we name the properties `Left` and `Right` and define them as abstract. Private, 
 	inner sub-classes implement one of them, and throw an exception from the other 
 	one. So, internally there are three different classes in play, but only one of 
 	them exposed to the outside.

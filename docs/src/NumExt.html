@@ -1,14 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,11 +11,7 @@
     <title>NumExt - ExtensionCord</title>
 
 	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    
-
-
-
-<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../bootstrap/css/cerulean/bootstrap.min.css" />
 <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="../sidebar/sidebar.min.css" />
 <link rel="stylesheet" href="../css/plain.min.css" />
@@ -60,10 +47,6 @@
         <div class="row">
             <div class="col-md-3 hidden-xs hidden-sm">
                 
-
-
-
-
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>On This Page</h4>
@@ -77,130 +60,70 @@
                 <h4>Table of Contents</h4>
             </div>
             <div class="panel-body main-menu">
-                
-<ul>
-
+                <ul>
 	<li><a href="../index.html">Home</a></li>
-
 	<ul>
-
 		<li>ExtensionCord home page.</li>
-
 	</ul>
-
 	<li><a href="../src/ArrayExt.html">Array Extensions</a></li>
-
 	<ul>
-
 		<li>Methods that help accessing and modifying arrays.</li>
-
 	</ul>
-
 	<li><a href="../src/BoolExt.html">Boolean Extentensions</a></li>
-
 	<ul>
-
 		<li>Extension methods for booleans.</li>
-
 	</ul>
-
 	<li><a href="../src/Either.html">Either Type</a></li>
-
 	<ul>
-
 		<li>Generic class that can contain one of two possible values.</li>
-
 	</ul>
-
 	<li><a href="../src/EnumerableExt.html">Enumerable Extensions</a></li>
-
 	<ul>
-
 		<li>A lot of extenion methods for the <code>IEnumerable</code> interface.</li>
-
 	</ul>
-
 	<li><a href="../src/Fun.html">Function Extensions</a></li>
-
 	<ul>
-
 		<li>Static class that contains methods for generic delegates <code>Func</code> and <code>Action</code>.</li>
-
 	</ul>
-
 	<li><a href="../src/NumExt.html" class="selected">Number Extensions</a></li>
-
 	<ul>
-
 		<li>Extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
-
 	</ul>
-
 	<li><a href="../src/ObjectExt.html">Object Extension</a></li>
-
 	<ul>
-
 		<li>Few generic extension methods which work with any type.</li>
-
 	</ul>
-
 	<li><a href="../src/Params.html">Params Collection</a></li>
-
 	<ul>
-
 		<li>Base class for key-value collections.</li>
-
 	</ul>
-
 	<li><a href="../src/ReflectionExt.html">Reflection Extensions</a></li>
-
 	<ul>
-
 		<li>Extends classes related to reflection.</li>
-
 	</ul>
-
 	<li><a href="../src/Seq.html">Seq Data Structure</a></li>
-
 	<ul>
-
 		<li>Minimal implementation of an immutable, singly-linked list.</li>
-
 	</ul>
-
 	<li><a href="../src/StringExt.html">String Extensions</a></li>
-
 	<ul>
-
 		<li>Methods that help string manipulation.</li>
-
 	</ul>
-
 	<li><a href="../src/TupleExt.html">Tuple Extensions</a></li>
-
 	<ul>
-
 		<li>Extends tuples with a couple of helper methods.</li>
-
 	</ul>
-
 	<li><a href="../License.html">License</a></li>
-
 	<ul>
-
 		<li>License and terms of use.</li>
-
 	</ul>
-
 </ul>
-
             </div>
         </div>
 
             </div>
 			<div class="col-md-9">
-				
-<ul class="pager">
+				<ul class="pager">
 	<li class="previous"><a href="../src/Fun.html">Previous: Function Extensions</a></li>
 	<li class="next"><a href="../src/ObjectExt.html">Next: Object Extension</a></li>
 </ul>
@@ -235,7 +158,7 @@ we define the following method.</p>
 <h2 id="approximate-equivalence">Approximate Equivalence</h2>
 <p>The <code>==</code> operator returns true for two floating point numbers only if
 they are exactly the same. Usually this is too strict, since floating
-point types, especially <code>float</code>, is notorius for its rounding errors.
+point types, especially <code>float</code>, is notorious for its rounding errors.
 In most cases, it is enough if the two values compared are close enough,
 or within a specified error margin.</p>
 <p>The methods below compare two floats or doubles and return true, if
@@ -290,16 +213,16 @@ an exception if the type is not <code>float</code> or <code>double</code>.</p>
 		<span class="punctuation">}</span>
 </code></pre>
 <h2 id="minimum-and-maximum-of-multiple-values">Minimum and Maximum of Multiple Values</h2>
-<p>The Min and Max methods in the System.Math class accept only two paremeters.
+<p>The Min and Max methods in the System.Math class accept only two parameters.
 When you want to find the min/max of multiple values, you can use the methods
-below. Instead of overloading, theit genericity is achieved through the
+below. Instead of overloading, their generality is achieved through the
 <code>IComparable</code> interface.</p>
-<pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.NumExt.Min<T>(params T[])" data-toggle="tooltip" title="ExtensionCord.NumExt.Min<T>(params T[])">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.NumExt.Min<T>(params T[])">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.Min<T>(params T[])">Min</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">params</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> values<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="keyword">struct</span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.IComparable<T>">IComparable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.NumExt.Min<T>(T[])" data-toggle="tooltip" title="ExtensionCord.NumExt.Min<T>(params T[])">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.NumExt.Min<T>(params T[])">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.Min<T>(params T[])">Min</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">params</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> values<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="keyword">struct</span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.IComparable<T>">IComparable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span>
 		<span class="punctuation">{</span>
 			<span class="keyword">return</span> <span data-toggle="tooltip" title="T[]">values</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Min<T>()">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Min<T>()">Min</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
 		<span class="punctuation">}</span>
 
-		<span class="keyword" id="ExtensionCord.NumExt.Max<T>(params T[])" data-toggle="tooltip" title="ExtensionCord.NumExt.Max<T>(params T[])">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.NumExt.Max<T>(params T[])">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.Max<T>(params T[])">Max</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">params</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> values<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="keyword">struct</span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.IComparable<T>">IComparable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span>
+		<span class="keyword" id="ExtensionCord.NumExt.Max<T>(T[])" data-toggle="tooltip" title="ExtensionCord.NumExt.Max<T>(params T[])">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.NumExt.Max<T>(params T[])">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span data-toggle="tooltip" title="ExtensionCord.NumExt.Max<T>(params T[])">Max</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">params</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> values<span class="punctuation">)</span> <span class="keyword">where</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span> <span class="punctuation">:</span> <span class="keyword">struct</span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.IComparable<T>">IComparable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/NumExt.html#T">T</a></span><span class="punctuation">&gt;</span>
 		<span class="punctuation">{</span>
 			<span class="keyword">return</span> <span data-toggle="tooltip" title="T[]">values</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Max<T>()">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Max<T>()">Max</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
 		<span class="punctuation">}</span>
@@ -323,8 +246,7 @@ with the method below.</p>
 </code></pre>
 
 				</div>
-				
-<ul class="pager">
+				<ul class="pager">
 	<li class="previous"><a href="../src/Fun.html">Previous: Function Extensions</a></li>
 	<li class="next"><a href="../src/ObjectExt.html">Next: Object Extension</a></li>
 </ul>
@@ -333,27 +255,26 @@ with the method below.</p>
     </div>
     
     <footer class="panel-footer text-center">
-        <p>Copyright © 2018 Tommi Johtela</p>
+        <div align="center">Copyright © 2018 Tommi Johtela</div>
+		<div align="right">
+			<small>
+				Documentation created with <a href="https://johtela.github.io/LiterateProgramming/">Literate Programming</a>.
+			</small>
+		</div>
     </footer>
 
 
     
-
-
-
-
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../sidebar/sidebar.js"></script>
     <script src="../syntax-highlight/syntax.js"></script>
-
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
         extensions: ["jsMath2jax.js"]
         });
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML'></script>
-
 	<script src="../mermaid/mermaid.min.js"></script>
 	<script>mermaid.initialize({startOnLoad:true});</script>
 </body>

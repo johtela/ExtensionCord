@@ -51,6 +51,7 @@
     <Compile Include="src\TupleExt.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="defaults.yml" />
     <None Include="ExtensionCord.nuspec" />
     <None Include="index.md" />
     <None Include="License.md" />

@@ -145,7 +145,7 @@ namespace ExtensionCord
 		/*
 		## Index of an Item
 
-		Alhtough IEnumerables do not have indexes per se, it can be handy to check how far
+		Although IEnumerables do not have indexes per se, it can be handy to check how far
 		from a beginning of the sequence a specified item resides. The `FirstIndex` method
 		returns the index of the first item matching the predicate. If no items match, -1 
 		is returned.
@@ -211,7 +211,7 @@ namespace ExtensionCord
 		## Removing Duplicates
 
 		If you want to remove duplicates from an IEnumerable, you can use the `Distinct` method
-		in the Linq library. But if your duplicates are already in consequtive positions, the
+		in the Linq library. But if your duplicates are already in consecutive positions, the
 		method does way too much work. `RemoveConsequtiveDuplicates` handles this case in _O(n)_ 
 		time. 
 		*/

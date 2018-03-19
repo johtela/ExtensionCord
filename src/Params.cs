@@ -48,7 +48,7 @@ namespace ExtensionCord
 		/*
 		## Retrieving a Parameter Value
 
-		The indexer property can be used to retrieve a paremeter value, if key
+		The indexer property can be used to retrieve a parameter value, if key
 		is given. The implementation linearly searches for a matching parameter,
 		so its time complexity is $O(n)$.
 		*/

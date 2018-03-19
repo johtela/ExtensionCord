@@ -19,7 +19,7 @@ namespace ExtensionCord
 		$A \implies B \equiv \neg A \lor B$.
 
 		Since this is a very simple expression replacement, we'll try to make the
-		compiler inline it aggresively.
+		compiler in-line it aggressively.
 		*/
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool Implies(this bool antecedent, bool consequent) => 

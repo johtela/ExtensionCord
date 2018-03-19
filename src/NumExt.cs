@@ -34,7 +34,7 @@ namespace ExtensionCord
 
 		The `==` operator returns true for two floating point numbers only if
 		they are exactly the same. Usually this is too strict, since floating 
-		point types, especially `float`, is notorius for its rounding errors.
+		point types, especially `float`, is notorious for its rounding errors.
 		In most cases, it is enough if the two values compared are close enough,
 		or within a specified error margin.
 
@@ -93,9 +93,9 @@ namespace ExtensionCord
 		/*
 		## Minimum and Maximum of Multiple Values
 
-		The Min and Max methods in the System.Math class accept only two paremeters.
+		The Min and Max methods in the System.Math class accept only two parameters.
 		When you want to find the min/max of multiple values, you can use the methods
-		below. Instead of overloading, theit genericity is achieved through the 
+		below. Instead of overloading, their generality is achieved through the 
 		`IComparable` interface.
 		*/
 		public static T Min<T> (params T[] values) where T : struct, IComparable<T>

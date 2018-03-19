@@ -1,8 +1,8 @@
 ﻿/*
 # Function Extensions
 
-It is possible to create extension methods for delagates, but they cannot be
-used in conjunction with lamda expressions, which makes them less convenient. 
+It is possible to create extension methods for delegates, but they cannot be
+used in conjunction with lambda expressions, which makes them less convenient. 
 So, the static methods defined in the `Fun`class below, are not actually extension 
 methods. Anyhow, they are helper methods that either take or return generic `Func` 
 and `Action` delegates.

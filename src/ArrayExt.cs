@@ -1,7 +1,7 @@
 ﻿/*
 # Array Extensions
 
-This class contains extension methods for arrays. Most of the them are paremeterized by the
+This class contains extension methods for arrays. Most of the them are parameterized by the
 array item type, so they effectively work with any array.
 */
 namespace ExtensionCord
@@ -66,7 +66,7 @@ namespace ExtensionCord
 		surprisingly powerful. You can actually implement almost all of the operations 
 		that are commonly used to manipulate sequences using reduce alone. For example,
 		mapping, filtering, reversing a sequence, and finding an item. It is basically the 
-		functional version of the foreach loop.
+		functional version of the `foreach` loop.
 		*/
         public static U ReduceLeft<T, U> (this T[] array, U acc, Func<U, T, U> func)
 		{
@@ -117,9 +117,9 @@ namespace ExtensionCord
 		/*
 		## Converting an Array to String
 
-		This function is super useful in many situations, especially when outputting degugging
+		This function is super useful in many situations, especially when outputting debugging
 		data. The function returns the contents of an array as string using the `Object.ToString` 
-		method to get the string representation of the indvidual items. The opening and closing 
+		method to get the string representation of the individual items. The opening and closing 
 		bracket, as well as the separator placed between the items, are given as parameters. 
 		*/
 		public static string ToString<T> (this T[] array, string openBracket, 
@@ -188,12 +188,12 @@ namespace ExtensionCord
 		/*
 		## Combinations
 
-		Contrary to permutation which takes an array of items and returns all its possible orderings,
-		combination takes an array of IEnumerables and returns all possible ways the items in these
-		IEnumerables can be combined together. The result is an IEnumerable of arrays with the same 
-		length as the input array.
+		Permutation takes an array of items and returns all its possible orderings, whereas combination 
+		takes an array of IEnumerables and returns all possible ways the items in these IEnumerables can 
+		be combined together. The result is an IEnumerable of arrays with the same length as the input 
+		array.
 
-		The alogithm that generates the combinations is very similar to the permutation algorithm.
+		The code that generates the combinations is very similar to the permutation algorithm.
 		It recursively selects each possible combination and uses only one result vector.
 		*/
 		private static IEnumerable<T[]> EnumerateCombinations<T>(this IEnumerable<T>[] values, 
@@ -232,7 +232,7 @@ namespace ExtensionCord
 
 		The following three methods just make accessing an array a bit simpler and terser. 
 		They are basically shorthands for common access patterns. The methods are decorated
-		with a special attribute that hints to the compiler that they should be inlined for
+		with a special attribute that hints to the compiler that they should be in-lined for
 		maximum performance.
 		*/
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

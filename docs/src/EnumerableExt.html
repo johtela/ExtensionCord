@@ -1,14 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,11 +11,7 @@
     <title>EnumerableExt - ExtensionCord</title>
 
 	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    
-
-
-
-<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../bootstrap/css/cerulean/bootstrap.min.css" />
 <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="../sidebar/sidebar.min.css" />
 <link rel="stylesheet" href="../css/plain.min.css" />
@@ -60,10 +47,6 @@
         <div class="row">
             <div class="col-md-3 hidden-xs hidden-sm">
                 
-
-
-
-
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>On This Page</h4>
@@ -77,130 +60,70 @@
                 <h4>Table of Contents</h4>
             </div>
             <div class="panel-body main-menu">
-                
-<ul>
-
+                <ul>
 	<li><a href="../index.html">Home</a></li>
-
 	<ul>
-
 		<li>ExtensionCord home page.</li>
-
 	</ul>
-
 	<li><a href="../src/ArrayExt.html">Array Extensions</a></li>
-
 	<ul>
-
 		<li>Methods that help accessing and modifying arrays.</li>
-
 	</ul>
-
 	<li><a href="../src/BoolExt.html">Boolean Extentensions</a></li>
-
 	<ul>
-
 		<li>Extension methods for booleans.</li>
-
 	</ul>
-
 	<li><a href="../src/Either.html">Either Type</a></li>
-
 	<ul>
-
 		<li>Generic class that can contain one of two possible values.</li>
-
 	</ul>
-
 	<li><a href="../src/EnumerableExt.html" class="selected">Enumerable Extensions</a></li>
-
 	<ul>
-
 		<li>A lot of extenion methods for the <code>IEnumerable</code> interface.</li>
-
 	</ul>
-
 	<li><a href="../src/Fun.html">Function Extensions</a></li>
-
 	<ul>
-
 		<li>Static class that contains methods for generic delegates <code>Func</code> and <code>Action</code>.</li>
-
 	</ul>
-
 	<li><a href="../src/NumExt.html">Number Extensions</a></li>
-
 	<ul>
-
 		<li>Extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
-
 	</ul>
-
 	<li><a href="../src/ObjectExt.html">Object Extension</a></li>
-
 	<ul>
-
 		<li>Few generic extension methods which work with any type.</li>
-
 	</ul>
-
 	<li><a href="../src/Params.html">Params Collection</a></li>
-
 	<ul>
-
 		<li>Base class for key-value collections.</li>
-
 	</ul>
-
 	<li><a href="../src/ReflectionExt.html">Reflection Extensions</a></li>
-
 	<ul>
-
 		<li>Extends classes related to reflection.</li>
-
 	</ul>
-
 	<li><a href="../src/Seq.html">Seq Data Structure</a></li>
-
 	<ul>
-
 		<li>Minimal implementation of an immutable, singly-linked list.</li>
-
 	</ul>
-
 	<li><a href="../src/StringExt.html">String Extensions</a></li>
-
 	<ul>
-
 		<li>Methods that help string manipulation.</li>
-
 	</ul>
-
 	<li><a href="../src/TupleExt.html">Tuple Extensions</a></li>
-
 	<ul>
-
 		<li>Extends tuples with a couple of helper methods.</li>
-
 	</ul>
-
 	<li><a href="../License.html">License</a></li>
-
 	<ul>
-
 		<li>License and terms of use.</li>
-
 	</ul>
-
 </ul>
-
             </div>
         </div>
 
             </div>
 			<div class="col-md-9">
-				
-<ul class="pager">
+				<ul class="pager">
 	<li class="previous"><a href="../src/Either.html">Previous: Either Type</a></li>
 	<li class="next"><a href="../src/Fun.html">Next: Function Extensions</a></li>
 </ul>
@@ -237,7 +160,7 @@ generation to:</p>
 <pre><code>EnumerableExt.Enumerate (&lt;item1&gt;, &lt;item2&gt;, ...)
 </code></pre>
 <pre class="csharp"><code class="csharp">		<span class="punctuation">[</span><span class="typename" data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplAttribute">MethodImpl</span><span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplOptions">MethodImplOptions</span><span class="punctuation" data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplOptions">.</span><span data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplOptions">AggressiveInlining</span><span class="punctuation">)</span><span class="punctuation">]</span>
-		<span class="keyword" id="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])">static</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])">Enumerate</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span><span class="punctuation">(</span><span class="keyword">params</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> items<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span data-toggle="tooltip" title="T[]">items</span><span class="punctuation" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])">;</span>
+		<span class="keyword" id="ExtensionCord.EnumerableExt.Enumerate<T>(T[])" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])">static</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])">Enumerate</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span><span class="punctuation">(</span><span class="keyword">params</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> items<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span data-toggle="tooltip" title="T[]">items</span><span class="punctuation" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])">;</span>
 </code></pre>
 <h2 id="ienumerable-from-a-function">IEnumerable from a Function</h2>
 <p>Another way to create an infinite IEnumerable is to wrap it over a function.</p>
@@ -261,7 +184,7 @@ succinctly from an IEnumerator and an IEnumerable.</p>
 			<span class="keyword">return</span> <span data-toggle="tooltip" title="System.Collections.Generic.IEnumerator<T>">enumerator</span><span class="punctuation" data-toggle="tooltip" title="T">.</span><span data-toggle="tooltip" title="T">Current</span><span class="punctuation">;</span>
 		<span class="punctuation">}</span>
 
-		<span class="keyword" id="ExtensionCord.EnumerableExt.Next<T>(ref System.Collections.Generic.IEnumerable<T>)" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Next<T>(ref System.Collections.Generic.IEnumerable<T>)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Next<T>(ref System.Collections.Generic.IEnumerable<T>)">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span> <span data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Next<T>(ref System.Collections.Generic.IEnumerable<T>)">Next</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span><span class="punctuation">(</span><span class="keyword">ref</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span> enumerable<span class="punctuation">)</span>
+		<span class="keyword" id="ExtensionCord.EnumerableExt.Next<T>(System.Collections.Generic.IEnumerable<T>)" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Next<T>(ref System.Collections.Generic.IEnumerable<T>)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Next<T>(ref System.Collections.Generic.IEnumerable<T>)">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span> <span data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Next<T>(ref System.Collections.Generic.IEnumerable<T>)">Next</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span><span class="punctuation">(</span><span class="keyword">ref</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span> enumerable<span class="punctuation">)</span>
 		<span class="punctuation">{</span>
 			<span class="keyword" data-toggle="tooltip" title="T">var</span> <span id="result">result</span> <span class="punctuation">=</span> <span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">enumerable</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.First<T>()">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.First<T>()">First</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
 			<span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">enumerable</span> <span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">=</span> <span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">enumerable</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Skip<T>(int)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Skip<T>(int)">Skip</span><span class="punctuation">(</span><span class="number" data-toggle="tooltip" title="int">1</span><span class="punctuation">)</span><span class="punctuation">;</span>
@@ -295,10 +218,10 @@ end of the enumeration, and <code>Prepend</code> which adds an item at the begin
 are using the <code>Concat</code> method, which is very efficient both in terms of memory
 and execution time.</p>
 <pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.EnumerableExt.Append<T>(System.Collections.Generic.IEnumerable<T>, T)" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Append<T>(System.Collections.Generic.IEnumerable<T>, T)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Append<T>(System.Collections.Generic.IEnumerable<T>, T)">static</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Append<T>(System.Collections.Generic.IEnumerable<T>, T)">Append</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span><span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span> enumerable<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span> item<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> 
-			<span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">enumerable</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Concat<T>(System.Collections.Generic.IEnumerable<T>)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Concat<T>(System.Collections.Generic.IEnumerable<T>)">Concat</span><span class="punctuation">(</span><span data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])"><a href="../src/EnumerableExt.html#ExtensionCord.EnumerableExt.Enumerate<T>(params T[])">Enumerate</a></span><span class="punctuation">(</span><span data-toggle="tooltip" title="T">item</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Append<T>(System.Collections.Generic.IEnumerable<T>, T)">;</span>
+			<span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">enumerable</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Concat<T>(System.Collections.Generic.IEnumerable<T>)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Concat<T>(System.Collections.Generic.IEnumerable<T>)">Concat</span><span class="punctuation">(</span><span data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])"><a href="../src/EnumerableExt.html#ExtensionCord.EnumerableExt.Enumerate<T>(T[])">Enumerate</a></span><span class="punctuation">(</span><span data-toggle="tooltip" title="T">item</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Append<T>(System.Collections.Generic.IEnumerable<T>, T)">;</span>
 
 		<span class="keyword" id="ExtensionCord.EnumerableExt.Prepend<T>(System.Collections.Generic.IEnumerable<T>, T)" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Prepend<T>(System.Collections.Generic.IEnumerable<T>, T)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Prepend<T>(System.Collections.Generic.IEnumerable<T>, T)">static</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Prepend<T>(System.Collections.Generic.IEnumerable<T>, T)">Prepend</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span><span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span> enumerable<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span> item<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> 
-			<span data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])"><a href="../src/EnumerableExt.html#ExtensionCord.EnumerableExt.Enumerate<T>(params T[])">Enumerate</a></span><span class="punctuation">(</span><span data-toggle="tooltip" title="T">item</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Concat<T>(System.Collections.Generic.IEnumerable<T>)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Concat<T>(System.Collections.Generic.IEnumerable<T>)">Concat</span><span class="punctuation">(</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">enumerable</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Prepend<T>(System.Collections.Generic.IEnumerable<T>, T)">;</span>
+			<span data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Enumerate<T>(params T[])"><a href="../src/EnumerableExt.html#ExtensionCord.EnumerableExt.Enumerate<T>(T[])">Enumerate</a></span><span class="punctuation">(</span><span data-toggle="tooltip" title="T">item</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Concat<T>(System.Collections.Generic.IEnumerable<T>)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.Concat<T>(System.Collections.Generic.IEnumerable<T>)">Concat</span><span class="punctuation">(</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">enumerable</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.Prepend<T>(System.Collections.Generic.IEnumerable<T>, T)">;</span>
 </code></pre>
 <h2 id="repeating-an-ienumerable">Repeating an IEnumerable</h2>
 <p>You can put an IEnumerable on repeat so that you can loop through it indefinitely
@@ -330,7 +253,7 @@ So, let's fix these shortcomings.</p>
 		<span class="punctuation">}</span>
 </code></pre>
 <h2 id="index-of-an-item">Index of an Item</h2>
-<p>Alhtough IEnumerables do not have indexes per se, it can be handy to check how far
+<p>Although IEnumerables do not have indexes per se, it can be handy to check how far
 from a beginning of the sequence a specified item resides. The <code>FirstIndex</code> method
 returns the index of the first item matching the predicate. If no items match, -1
 is returned.</p>
@@ -378,7 +301,7 @@ for which the selector returned the min/max value.</p>
 			<span class="keyword">foreach</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="T">var</span> item <span class="keyword">in</span> <span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">items</span><span class="punctuation">)</span>
 			<span class="punctuation">{</span>
 				<span class="keyword" data-toggle="tooltip" title="float">var</span> value <span class="punctuation">=</span> <span data-toggle="tooltip" title="System.Func<T, float>">selector</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="T">item</span><span class="punctuation">)</span><span class="punctuation">;</span>
-				<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="float">value</span><span class="punctuation" data-toggle="tooltip" title="float.ApproxEquals<float>(float)">.</span><span data-toggle="tooltip" title="float.ApproxEquals<float>(float)"><a href="../src/NumExt.html#float.ApproxEquals<float>(float)">ApproxEquals</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="float">max</span><span class="punctuation">)</span><span class="punctuation">)</span>
+				<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="float">value</span><span class="punctuation" data-toggle="tooltip" title="float.ApproxEquals<float>(float)">.</span><span data-toggle="tooltip" title="float.ApproxEquals<float>(float)"><a href="../src/NumExt.html#ExtensionCord.NumExt.ApproxEquals<T>(T, T)">ApproxEquals</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="float">max</span><span class="punctuation">)</span><span class="punctuation">)</span>
 					<span data-toggle="tooltip" title="System.Collections.Generic.List<T>">res</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.List<T>.Add(T)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.List<T>.Add(T)">Add</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="T">item</span><span class="punctuation">)</span><span class="punctuation">;</span>
 				<span class="keyword">else</span> <span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="float">value</span> <span class="punctuation" data-toggle="tooltip" title="bool">&gt;</span> <span data-toggle="tooltip" title="float">max</span><span class="punctuation">)</span>
 				<span class="punctuation">{</span>
@@ -392,7 +315,7 @@ for which the selector returned the min/max value.</p>
 </code></pre>
 <h2 id="removing-duplicates">Removing Duplicates</h2>
 <p>If you want to remove duplicates from an IEnumerable, you can use the <code>Distinct</code> method
-in the Linq library. But if your duplicates are already in consequtive positions, the
+in the Linq library. But if your duplicates are already in consecutive positions, the
 method does way too much work. <code>RemoveConsequtiveDuplicates</code> handles this case in <em>O(n)</em>
 time.</p>
 <pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.EnumerableExt.RemoveConsequtiveDuplicates<T>(System.Collections.Generic.IEnumerable<T>)" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.RemoveConsequtiveDuplicates<T>(System.Collections.Generic.IEnumerable<T>)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.EnumerableExt.RemoveConsequtiveDuplicates<T>(System.Collections.Generic.IEnumerable<T>)">static</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="ExtensionCord.EnumerableExt.RemoveConsequtiveDuplicates<T>(System.Collections.Generic.IEnumerable<T>)">RemoveConsequtiveDuplicates</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/EnumerableExt.html#T">T</a></span><span class="punctuation">&gt;</span> items<span class="punctuation">)</span>
@@ -455,22 +378,21 @@ method.</p>
 			<span class="keyword">return</span> <span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>"><a href="../src/EnumerableExt.html#ExtensionCord.PrintableEnumerable<T>._enumerable">_enumerable</a></span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.GetEnumerator()">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.GetEnumerator()">GetEnumerator</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
 		<span class="punctuation">}</span>
 
-		<span class="typename" data-toggle="tooltip" title="System.Collections.IEnumerator">IEnumerator</span> <span class="typename" data-toggle="tooltip" title="System.Collections.IEnumerable">IEnumerable</span><span class="punctuation">.</span><span id="ExtensionCord.PrintableEnumerable<T>.System.Collections.IEnumerable.GetEnumerator()" data-toggle="tooltip" title="ExtensionCord.PrintableEnumerable<T>.System.Collections.IEnumerable.GetEnumerator()">GetEnumerator</span><span class="punctuation">(</span><span class="punctuation">)</span>
+		<span class="typename" data-toggle="tooltip" title="System.Collections.IEnumerator">IEnumerator</span> <span class="typename" data-toggle="tooltip" title="System.Collections.IEnumerable">IEnumerable</span><span class="punctuation">.</span><span data-toggle="tooltip" title="ExtensionCord.PrintableEnumerable<T>.System.Collections.IEnumerable.GetEnumerator()">GetEnumerator</span><span class="punctuation">(</span><span class="punctuation">)</span>
 		<span class="punctuation">{</span>
 			<span class="keyword">return</span> <span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>"><a href="../src/EnumerableExt.html#ExtensionCord.PrintableEnumerable<T>._enumerable">_enumerable</a></span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.GetEnumerator()">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.GetEnumerator()">GetEnumerator</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
 		<span class="punctuation">}</span>
 
 		<span class="keyword" id="ExtensionCord.PrintableEnumerable<T>.ToString()" data-toggle="tooltip" title="ExtensionCord.PrintableEnumerable<T>.ToString()">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.PrintableEnumerable<T>.ToString()">override</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> <span data-toggle="tooltip" title="ExtensionCord.PrintableEnumerable<T>.ToString()">ToString</span><span class="punctuation">(</span><span class="punctuation">)</span>
 		<span class="punctuation">{</span>
-			<span class="keyword">return</span> <span class="keyword" data-toggle="tooltip" title="string">string</span><span class="punctuation" data-toggle="tooltip" title="string.Format(string, object)">.</span><span data-toggle="tooltip" title="string.Format(string, object)">Format</span> <span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;[ {0} ]&quot;</span><span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.PrintableEnumerable<T>">this</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.SeparateWith<T>(string)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.SeparateWith<T>(string)"><a href="../src/EnumerableExt.html#System.Collections.Generic.IEnumerable<T>.SeparateWith<T>(string)">SeparateWith</a></span> <span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;, &quot;</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">;</span>
+			<span class="keyword">return</span> <span class="keyword" data-toggle="tooltip" title="string">string</span><span class="punctuation" data-toggle="tooltip" title="string.Format(string, object)">.</span><span data-toggle="tooltip" title="string.Format(string, object)">Format</span> <span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;[ {0} ]&quot;</span><span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.PrintableEnumerable<T>">this</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.SeparateWith<T>(string)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>.SeparateWith<T>(string)"><a href="../src/EnumerableExt.html#ExtensionCord.EnumerableExt.SeparateWith<T>(System.Collections.Generic.IEnumerable<T>, string)">SeparateWith</a></span> <span class="punctuation">(</span><span class="string" data-toggle="tooltip" title="string">&quot;, &quot;</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">;</span>
 		<span class="punctuation">}</span>
 	<span class="punctuation">}</span>
 <span class="punctuation">}</span>
 </code></pre>
 
 				</div>
-				
-<ul class="pager">
+				<ul class="pager">
 	<li class="previous"><a href="../src/Either.html">Previous: Either Type</a></li>
 	<li class="next"><a href="../src/Fun.html">Next: Function Extensions</a></li>
 </ul>
@@ -479,27 +401,26 @@ method.</p>
     </div>
     
     <footer class="panel-footer text-center">
-        <p>Copyright © 2018 Tommi Johtela</p>
+        <div align="center">Copyright © 2018 Tommi Johtela</div>
+		<div align="right">
+			<small>
+				Documentation created with <a href="https://johtela.github.io/LiterateProgramming/">Literate Programming</a>.
+			</small>
+		</div>
     </footer>
 
 
     
-
-
-
-
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../sidebar/sidebar.js"></script>
     <script src="../syntax-highlight/syntax.js"></script>
-
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
         extensions: ["jsMath2jax.js"]
         });
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML'></script>
-
 	<script src="../mermaid/mermaid.min.js"></script>
 	<script>mermaid.initialize({startOnLoad:true});</script>
 </body>

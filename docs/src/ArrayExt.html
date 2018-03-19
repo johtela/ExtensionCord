@@ -1,14 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,11 +11,7 @@
     <title>ArrayExt - ExtensionCord</title>
 
 	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    
-
-
-
-<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../bootstrap/css/cerulean/bootstrap.min.css" />
 <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="../sidebar/sidebar.min.css" />
 <link rel="stylesheet" href="../css/plain.min.css" />
@@ -60,10 +47,6 @@
         <div class="row">
             <div class="col-md-3 hidden-xs hidden-sm">
                 
-
-
-
-
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>On This Page</h4>
@@ -77,136 +60,76 @@
                 <h4>Table of Contents</h4>
             </div>
             <div class="panel-body main-menu">
-                
-<ul>
-
+                <ul>
 	<li><a href="../index.html">Home</a></li>
-
 	<ul>
-
 		<li>ExtensionCord home page.</li>
-
 	</ul>
-
 	<li><a href="../src/ArrayExt.html" class="selected">Array Extensions</a></li>
-
 	<ul>
-
 		<li>Methods that help accessing and modifying arrays.</li>
-
 	</ul>
-
 	<li><a href="../src/BoolExt.html">Boolean Extentensions</a></li>
-
 	<ul>
-
 		<li>Extension methods for booleans.</li>
-
 	</ul>
-
 	<li><a href="../src/Either.html">Either Type</a></li>
-
 	<ul>
-
 		<li>Generic class that can contain one of two possible values.</li>
-
 	</ul>
-
 	<li><a href="../src/EnumerableExt.html">Enumerable Extensions</a></li>
-
 	<ul>
-
 		<li>A lot of extenion methods for the <code>IEnumerable</code> interface.</li>
-
 	</ul>
-
 	<li><a href="../src/Fun.html">Function Extensions</a></li>
-
 	<ul>
-
 		<li>Static class that contains methods for generic delegates <code>Func</code> and <code>Action</code>.</li>
-
 	</ul>
-
 	<li><a href="../src/NumExt.html">Number Extensions</a></li>
-
 	<ul>
-
 		<li>Extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
-
 	</ul>
-
 	<li><a href="../src/ObjectExt.html">Object Extension</a></li>
-
 	<ul>
-
 		<li>Few generic extension methods which work with any type.</li>
-
 	</ul>
-
 	<li><a href="../src/Params.html">Params Collection</a></li>
-
 	<ul>
-
 		<li>Base class for key-value collections.</li>
-
 	</ul>
-
 	<li><a href="../src/ReflectionExt.html">Reflection Extensions</a></li>
-
 	<ul>
-
 		<li>Extends classes related to reflection.</li>
-
 	</ul>
-
 	<li><a href="../src/Seq.html">Seq Data Structure</a></li>
-
 	<ul>
-
 		<li>Minimal implementation of an immutable, singly-linked list.</li>
-
 	</ul>
-
 	<li><a href="../src/StringExt.html">String Extensions</a></li>
-
 	<ul>
-
 		<li>Methods that help string manipulation.</li>
-
 	</ul>
-
 	<li><a href="../src/TupleExt.html">Tuple Extensions</a></li>
-
 	<ul>
-
 		<li>Extends tuples with a couple of helper methods.</li>
-
 	</ul>
-
 	<li><a href="../License.html">License</a></li>
-
 	<ul>
-
 		<li>License and terms of use.</li>
-
 	</ul>
-
 </ul>
-
             </div>
         </div>
 
             </div>
 			<div class="col-md-9">
-				
-<ul class="pager">
+				<ul class="pager">
 	<li class="previous"><a href="../index.html">Previous: Home</a></li>
 	<li class="next"><a href="../src/BoolExt.html">Next: Boolean Extentensions</a></li>
 </ul>
 				<div id="static-content" class="markdown">
 					<h1 id="array-extensions">Array Extensions</h1>
-<p>This class contains extension methods for arrays. Most of the them are paremeterized by the
+<p>This class contains extension methods for arrays. Most of the them are parameterized by the
 array item type, so they effectively work with any array.</p>
 <pre class="csharp"><code class="csharp"><span class="keyword" id="ExtensionCord">namespace</span> ExtensionCord
 <span class="punctuation">{</span>
@@ -264,7 +187,7 @@ all items all traversed, the final accumulator value is returned.</p>
 surprisingly powerful. You can actually implement almost all of the operations
 that are commonly used to manipulate sequences using reduce alone. For example,
 mapping, filtering, reversing a sequence, and finding an item. It is basically the
-functional version of the foreach loop.</p>
+functional version of the <code>foreach</code> loop.</p>
 <pre class="csharp"><code class="csharp">        <span class="keyword" id="ExtensionCord.ArrayExt.ReduceLeft<T, U>(T[], U, System.Func<U, T, U>)" data-toggle="tooltip" title="ExtensionCord.ArrayExt.ReduceLeft<T, U>(T[], U, System.Func<U, T, U>)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.ArrayExt.ReduceLeft<T, U>(T[], U, System.Func<U, T, U>)">static</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/ArrayExt.html#U">U</a></span> <span data-toggle="tooltip" title="ExtensionCord.ArrayExt.ReduceLeft<T, U>(T[], U, System.Func<U, T, U>)">ReduceLeft</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/ArrayExt.html#T">T</a></span><span class="punctuation">,</span> <span class="typename"><a href="../src/ArrayExt.html#U">U</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/ArrayExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> array<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/ArrayExt.html#U">U</a></span> acc<span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.Func<U, T, U>">Func</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="U"><a href="../src/ArrayExt.html#U">U</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/ArrayExt.html#T">T</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="U"><a href="../src/ArrayExt.html#U">U</a></span><span class="punctuation">&gt;</span> func<span class="punctuation">)</span>
 		<span class="punctuation">{</span>
 			<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="int">int</span> i <span class="punctuation">=</span> <span class="number" data-toggle="tooltip" title="int">0</span><span class="punctuation">;</span> <span data-toggle="tooltip" title="int">i</span> <span class="punctuation" data-toggle="tooltip" title="bool">&lt;</span> <span data-toggle="tooltip" title="T[]">array</span><span class="punctuation" data-toggle="tooltip" title="int">.</span><span data-toggle="tooltip" title="int">Length</span><span class="punctuation">;</span> <span data-toggle="tooltip" title="int">i</span><span class="punctuation" data-toggle="tooltip" title="int">++</span><span class="punctuation">)</span>
@@ -309,9 +232,9 @@ is more efficient for arrays.</p>
 		<span class="punctuation">}</span>
 </code></pre>
 <h2 id="converting-an-array-to-string">Converting an Array to String</h2>
-<p>This function is super useful in many situations, especially when outputting degugging
+<p>This function is super useful in many situations, especially when outputting debugging
 data. The function returns the contents of an array as string using the <code>Object.ToString</code>
-method to get the string representation of the indvidual items. The opening and closing
+method to get the string representation of the individual items. The opening and closing
 bracket, as well as the separator placed between the items, are given as parameters.</p>
 <pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.ArrayExt.ToString<T>(T[], string, string, string)" data-toggle="tooltip" title="ExtensionCord.ArrayExt.ToString<T>(T[], string, string, string)">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.ArrayExt.ToString<T>(T[], string, string, string)">static</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> <span data-toggle="tooltip" title="ExtensionCord.ArrayExt.ToString<T>(T[], string, string, string)">ToString</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/ArrayExt.html#T">T</a></span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/ArrayExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> array<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> openBracket<span class="punctuation">,</span> 
 			<span class="keyword" data-toggle="tooltip" title="string">string</span> closeBracket<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> separator<span class="punctuation">)</span>
@@ -361,7 +284,7 @@ permutations.</p>
 					<span class="keyword">foreach</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="T[]">var</span> a <span class="keyword">in</span> <span data-toggle="tooltip" title="ExtensionCord.ArrayExt.EnumeratePermutations<T>(int, T[])"><a href="../src/ArrayExt.html#ExtensionCord.ArrayExt.EnumeratePermutations<T>(int, T[])">EnumeratePermutations</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="int">n</span> <span class="punctuation" data-toggle="tooltip" title="int">-</span> <span class="number" data-toggle="tooltip" title="int">1</span><span class="punctuation">,</span> <span data-toggle="tooltip" title="T[]">array</span><span class="punctuation">)</span><span class="punctuation">)</span>
 						<span class="keyword">yield</span> <span class="keyword">return</span> <span data-toggle="tooltip" title="T[]">a</span><span class="punctuation">;</span>
 					<span class="keyword" data-toggle="tooltip" title="int">var</span> <span id="j">j</span> <span class="punctuation">=</span> <span data-toggle="tooltip" title="int">n</span> <span class="punctuation" data-toggle="tooltip" title="int">%</span> <span class="number" data-toggle="tooltip" title="int">2</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="number" data-toggle="tooltip" title="int">1</span> <span class="punctuation" data-toggle="tooltip" title="int">?</span> <span class="number" data-toggle="tooltip" title="int">0</span> <span class="punctuation" data-toggle="tooltip" title="int">:</span> <span data-toggle="tooltip" title="int">i</span><span class="punctuation">;</span>
-					<span data-toggle="tooltip" title="T[]">array</span><span class="punctuation" data-toggle="tooltip" title="T[].Swap<T>(int, int)">.</span><span data-toggle="tooltip" title="T[].Swap<T>(int, int)"><a href="../src/ArrayExt.html#T[].Swap<T>(int, int)">Swap</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="int">j</span><span class="punctuation">,</span> <span data-toggle="tooltip" title="int">n</span><span class="punctuation">)</span><span class="punctuation">;</span>
+					<span data-toggle="tooltip" title="T[]">array</span><span class="punctuation" data-toggle="tooltip" title="T[].Swap<T>(int, int)">.</span><span data-toggle="tooltip" title="T[].Swap<T>(int, int)"><a href="../src/ArrayExt.html#ExtensionCord.ArrayExt.Swap<T>(T[], int, int)">Swap</a></span> <span class="punctuation">(</span><span data-toggle="tooltip" title="int">j</span><span class="punctuation">,</span> <span data-toggle="tooltip" title="int">n</span><span class="punctuation">)</span><span class="punctuation">;</span>
 				<span class="punctuation">}</span>
 			<span class="punctuation">}</span>
 		<span class="punctuation">}</span>
@@ -374,11 +297,11 @@ permutations.</p>
 		<span class="punctuation">}</span>
 </code></pre>
 <h2 id="combinations">Combinations</h2>
-<p>Contrary to permutation which takes an array of items and returns all its possible orderings,
-combination takes an array of IEnumerables and returns all possible ways the items in these
-IEnumerables can be combined together. The result is an IEnumerable of arrays with the same
-length as the input array.</p>
-<p>The alogithm that generates the combinations is very similar to the permutation algorithm.
+<p>Permutation takes an array of items and returns all its possible orderings, whereas combination
+takes an array of IEnumerables and returns all possible ways the items in these IEnumerables can
+be combined together. The result is an IEnumerable of arrays with the same length as the input
+array.</p>
+<p>The code that generates the combinations is very similar to the permutation algorithm.
 It recursively selects each possible combination and uses only one result vector.</p>
 <pre class="csharp"><code class="csharp">		<span class="keyword" id="ExtensionCord.ArrayExt.EnumerateCombinations<T>(System.Collections.Generic.IEnumerable<T>[], T[], int)" data-toggle="tooltip" title="ExtensionCord.ArrayExt.EnumerateCombinations<T>(System.Collections.Generic.IEnumerable<T>[], T[], int)">private</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.ArrayExt.EnumerateCombinations<T>(System.Collections.Generic.IEnumerable<T>[], T[], int)">static</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T[]>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/ArrayExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">&gt;</span> <span data-toggle="tooltip" title="ExtensionCord.ArrayExt.EnumerateCombinations<T>(System.Collections.Generic.IEnumerable<T>[], T[], int)">EnumerateCombinations</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/ArrayExt.html#T">T</a></span><span class="punctuation">&gt;</span><span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>">IEnumerable</span><span class="punctuation">&lt;</span><span class="typename" data-toggle="tooltip" title="T"><a href="../src/ArrayExt.html#T">T</a></span><span class="punctuation">&gt;</span><span class="punctuation">[</span><span class="punctuation">]</span> values<span class="punctuation">,</span> 
 			<span class="typename" data-toggle="tooltip" title="T"><a href="../src/ArrayExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> result<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="int">int</span> index<span class="punctuation">)</span>
@@ -389,7 +312,7 @@ It recursively selects each possible combination and uses only one result vector
 				<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="int">index</span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>[]">values</span><span class="punctuation" data-toggle="tooltip" title="int">.</span><span data-toggle="tooltip" title="int">Length</span> <span class="punctuation" data-toggle="tooltip" title="int">-</span> <span class="number" data-toggle="tooltip" title="int">1</span><span class="punctuation">)</span>
 					<span class="keyword">yield</span> <span class="keyword">return</span> <span data-toggle="tooltip" title="T[]">result</span><span class="punctuation">;</span>
 				<span class="keyword">else</span>
-					<span class="keyword">foreach</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="T[]">var</span> v <span class="keyword">in</span> <span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>[]">values</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>[].EnumerateCombinations<T>(T[], int)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>[].EnumerateCombinations<T>(T[], int)"><a href="../src/ArrayExt.html#System.Collections.Generic.IEnumerable<T>[].EnumerateCombinations<T>(T[], int)">EnumerateCombinations</a></span><span class="punctuation">(</span><span data-toggle="tooltip" title="T[]">result</span><span class="punctuation">,</span> <span data-toggle="tooltip" title="int">index</span> <span class="punctuation" data-toggle="tooltip" title="int">+</span> <span class="number" data-toggle="tooltip" title="int">1</span><span class="punctuation">)</span><span class="punctuation">)</span>
+					<span class="keyword">foreach</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="T[]">var</span> v <span class="keyword">in</span> <span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>[]">values</span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>[].EnumerateCombinations<T>(T[], int)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.IEnumerable<T>[].EnumerateCombinations<T>(T[], int)"><a href="../src/ArrayExt.html#ExtensionCord.ArrayExt.EnumerateCombinations<T>(System.Collections.Generic.IEnumerable<T>[], T[], int)">EnumerateCombinations</a></span><span class="punctuation">(</span><span data-toggle="tooltip" title="T[]">result</span><span class="punctuation">,</span> <span data-toggle="tooltip" title="int">index</span> <span class="punctuation" data-toggle="tooltip" title="int">+</span> <span class="number" data-toggle="tooltip" title="int">1</span><span class="punctuation">)</span><span class="punctuation">)</span>
 						<span class="keyword">yield</span> <span class="keyword">return</span> <span data-toggle="tooltip" title="T[]">v</span><span class="punctuation">;</span>
 			<span class="punctuation">}</span>
 		<span class="punctuation">}</span>
@@ -413,7 +336,7 @@ times. The <code>Duplicate</code> method does just that.</p>
 <h2 id="simple-accessors">Simple Accessors</h2>
 <p>The following three methods just make accessing an array a bit simpler and terser.
 They are basically shorthands for common access patterns. The methods are decorated
-with a special attribute that hints to the compiler that they should be inlined for
+with a special attribute that hints to the compiler that they should be in-lined for
 maximum performance.</p>
 <pre class="csharp"><code class="csharp">		<span class="punctuation">[</span><span class="typename" data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplAttribute">MethodImpl</span><span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplOptions">MethodImplOptions</span><span class="punctuation" data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplOptions">.</span><span data-toggle="tooltip" title="System.Runtime.CompilerServices.MethodImplOptions">AggressiveInlining</span><span class="punctuation">)</span><span class="punctuation">]</span>
 		<span class="keyword" id="ExtensionCord.ArrayExt.First<T>(T[])" data-toggle="tooltip" title="ExtensionCord.ArrayExt.First<T>(T[])">public</span> <span class="keyword" data-toggle="tooltip" title="ExtensionCord.ArrayExt.First<T>(T[])">static</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/ArrayExt.html#T">T</a></span> <span data-toggle="tooltip" title="ExtensionCord.ArrayExt.First<T>(T[])">First</span><span class="punctuation">&lt;</span><span class="typename"><a href="../src/ArrayExt.html#T">T</a></span><span class="punctuation">&gt;</span><span class="punctuation">(</span><span class="keyword">this</span> <span class="typename" data-toggle="tooltip" title="T"><a href="../src/ArrayExt.html#T">T</a></span><span class="punctuation">[</span><span class="punctuation">]</span> array<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span data-toggle="tooltip" title="T[]">array</span><span class="punctuation">[</span><span class="number" data-toggle="tooltip" title="int">0</span><span class="punctuation">]</span><span class="punctuation" data-toggle="tooltip" title="ExtensionCord.ArrayExt.First<T>(T[])">;</span>
@@ -469,8 +392,7 @@ following two methods are there for these occasions.</p>
 </code></pre>
 
 				</div>
-				
-<ul class="pager">
+				<ul class="pager">
 	<li class="previous"><a href="../index.html">Previous: Home</a></li>
 	<li class="next"><a href="../src/BoolExt.html">Next: Boolean Extentensions</a></li>
 </ul>
@@ -479,27 +401,26 @@ following two methods are there for these occasions.</p>
     </div>
     
     <footer class="panel-footer text-center">
-        <p>Copyright © 2018 Tommi Johtela</p>
+        <div align="center">Copyright © 2018 Tommi Johtela</div>
+		<div align="right">
+			<small>
+				Documentation created with <a href="https://johtela.github.io/LiterateProgramming/">Literate Programming</a>.
+			</small>
+		</div>
     </footer>
 
 
     
-
-
-
-
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../sidebar/sidebar.js"></script>
     <script src="../syntax-highlight/syntax.js"></script>
-
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
         extensions: ["jsMath2jax.js"]
         });
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML'></script>
-
 	<script src="../mermaid/mermaid.min.js"></script>
 	<script>mermaid.initialize({startOnLoad:true});</script>
 </body>
