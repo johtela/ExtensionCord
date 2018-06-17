@@ -18,14 +18,14 @@ namespace ExtensionCord
 		The following method should really be inside .NET framework in the 
 		first place. It returns an attribute of specified type given the
 		reflection info for a member. If an attribute with specified type
-		is not found, null is returned.
+		is not found, null is retuned.
 		*/
 		public static T GetAttribute<T> (this MemberInfo mi) where T : Attribute
 		{
 			if (mi == null)
 				return null;
 			var attrs = mi.GetCustomAttributes (typeof (T), true);
-			return attrs == null || attrs.Length == 0 ? null : attrs.Cast<T> ().Single ();
+			return attrs == null || attrs.None () ? null : attrs.Cast<T> ().Single ();
 		}
 		/*
 		## Is Object an Instance of a Generic Type 

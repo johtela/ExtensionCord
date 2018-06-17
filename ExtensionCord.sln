@@ -3,13 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionCord", "ExtensionCord.csproj", "{67D97C6C-156C-4D73-8800-097B4ACE4309}"
-EndProject
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "Scripts", "Scripts\Scripts.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C406343-827C-4979-AD0D-8C1A6CF33089}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		defaults.yml = defaults.yml
+		index.md = index.md
+		License.md = License.md
+		README.md = README.md
+		TOC.yml = TOC.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionCord", "ExtensionCord\ExtensionCord.csproj", "{23FD9DAE-B7D5-464F-A339-0266FC68F9DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{39DD0161-D6B5-43D8-9A06-DB0571429BD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{A3BE1E14-F03D-4157-9A82-0B8E25EF6E4A}"
+	ProjectSection(SolutionItems) = preProject
+		docs\images\extension-cord.png = docs\images\extension-cord.png
+		docs\images\extension-cord.svg = docs\images\extension-cord.svg
 	EndProjectSection
 EndProject
 Global
@@ -18,17 +31,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{67D97C6C-156C-4D73-8800-097B4ACE4309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67D97C6C-156C-4D73-8800-097B4ACE4309}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67D97C6C-156C-4D73-8800-097B4ACE4309}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67D97C6C-156C-4D73-8800-097B4ACE4309}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23FD9DAE-B7D5-464F-A339-0266FC68F9DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23FD9DAE-B7D5-464F-A339-0266FC68F9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23FD9DAE-B7D5-464F-A339-0266FC68F9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23FD9DAE-B7D5-464F-A339-0266FC68F9DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3BE1E14-F03D-4157-9A82-0B8E25EF6E4A} = {39DD0161-D6B5-43D8-9A06-DB0571429BD6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F1A6DF3-8005-4715-8018-55FFCDEA9A91}

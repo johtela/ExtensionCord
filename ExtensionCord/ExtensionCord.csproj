@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <PackageId>ExtensionCord</PackageId>
+    <Authors>Tommi Johtela</Authors>
+    <Company />
+    <Product />
+    <Description>Extensions for standard .NET types.</Description>
+    <Copyright>Copyright © 2018 Tommi Johtela</Copyright>
+    <PackageLicenseUrl>https://johtela.github.io/ExtensionCord/License.html</PackageLicenseUrl>
+    <PackageProjectUrl>https://johtela.github.io/ExtensionCord/</PackageProjectUrl>
+    <PackageIconUrl>https://johtela.github.io/ExtensionCord/images/extension-cord.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/johtela/ExtensionCord</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>c# .net</PackageTags>
+    <PackageReleaseNotes>v1.1 Ported to .NET Standard
+v1.0 Initial release</PackageReleaseNotes>
+    <Version>1.1.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>
