@@ -1,4 +1,5 @@
 ﻿[![Build status](https://ci.appveyor.com/api/projects/status/gwtbg5j0tvde2kty?svg=true)](https://ci.appveyor.com/project/johtela/extensioncord)
+[![NuGet Version](https://img.shields.io/nuget/v/ExtensionCord.svg)](https://www.nuget.org/packages/ExtensionCord)
 
 # ExtensionCord - Useful Extensions for .NET Types
 

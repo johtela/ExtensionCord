@@ -11,7 +11,11 @@
     <title>index - ExtensionCord</title>
 
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="bootstrap/css/cerulean/bootstrap.min.css" />
+    
+
+
+
+<link rel="stylesheet" href="bootstrap/css/cerulean/bootstrap.min.css" />
 <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="sidebar/sidebar.min.css" />
 <link rel="stylesheet" href="css/plain.min.css" />
@@ -65,51 +69,51 @@
 	<ul>
 		<li>ExtensionCord home page.</li>
 	</ul>
-	<li><a href="src/ArrayExt.html">Array Extensions</a></li>
+	<li><a href="ExtensionCord/ArrayExt.html">Array Extensions</a></li>
 	<ul>
 		<li>Methods that help accessing and modifying arrays.</li>
 	</ul>
-	<li><a href="src/BoolExt.html">Boolean Extentensions</a></li>
+	<li><a href="ExtensionCord/BoolExt.html">Boolean Extensions</a></li>
 	<ul>
 		<li>Extension methods for booleans.</li>
 	</ul>
-	<li><a href="src/Either.html">Either Type</a></li>
+	<li><a href="ExtensionCord/Either.html">Either Type</a></li>
 	<ul>
 		<li>Generic class that can contain one of two possible values.</li>
 	</ul>
-	<li><a href="src/EnumerableExt.html">Enumerable Extensions</a></li>
+	<li><a href="ExtensionCord/EnumerableExt.html">Enumerable Extensions</a></li>
 	<ul>
 		<li>A lot of extenion methods for the <code>IEnumerable</code> interface.</li>
 	</ul>
-	<li><a href="src/Fun.html">Function Extensions</a></li>
+	<li><a href="ExtensionCord/Fun.html">Function Extensions</a></li>
 	<ul>
 		<li>Static class that contains methods for generic delegates <code>Func</code> and <code>Action</code>.</li>
 	</ul>
-	<li><a href="src/NumExt.html">Number Extensions</a></li>
+	<li><a href="ExtensionCord/NumExt.html">Number Extensions</a></li>
 	<ul>
 		<li>Extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
 	</ul>
-	<li><a href="src/ObjectExt.html">Object Extension</a></li>
+	<li><a href="ExtensionCord/ObjectExt.html">Object Extension</a></li>
 	<ul>
 		<li>Few generic extension methods which work with any type.</li>
 	</ul>
-	<li><a href="src/Params.html">Params Collection</a></li>
+	<li><a href="ExtensionCord/Params.html">Params Collection</a></li>
 	<ul>
 		<li>Base class for key-value collections.</li>
 	</ul>
-	<li><a href="src/ReflectionExt.html">Reflection Extensions</a></li>
+	<li><a href="ExtensionCord/ReflectionExt.html">Reflection Extensions</a></li>
 	<ul>
 		<li>Extends classes related to reflection.</li>
 	</ul>
-	<li><a href="src/Seq.html">Seq Data Structure</a></li>
+	<li><a href="ExtensionCord/Seq.html">Seq Data Structure</a></li>
 	<ul>
 		<li>Minimal implementation of an immutable, singly-linked list.</li>
 	</ul>
-	<li><a href="src/StringExt.html">String Extensions</a></li>
+	<li><a href="ExtensionCord/StringExt.html">String Extensions</a></li>
 	<ul>
 		<li>Methods that help string manipulation.</li>
 	</ul>
-	<li><a href="src/TupleExt.html">Tuple Extensions</a></li>
+	<li><a href="ExtensionCord/TupleExt.html">Tuple Extensions</a></li>
 	<ul>
 		<li>Extends tuples with a couple of helper methods.</li>
 	</ul>
@@ -129,43 +133,44 @@
 			<div class="col-md-9">
 				<ul class="pager">
 	<li class="previous disabled"><a href="#">Previous</a></li>
-	<li class="next"><a href="src/ArrayExt.html">Next: Array Extensions</a></li>
+	<li class="next"><a href="ExtensionCord/ArrayExt.html">Next: Array Extensions</a></li>
 </ul>
 				<div id="static-content" class="markdown">
-					<p><img src="images/extension-cord.svg" class="img-responsive center-block" alt="Logo" /></p>
-<h1 id="extensioncord-useful-extensions-for.net-types">ExtensionCord - Useful Extensions for .NET Types</h1>
-<p>This assembly contains useful extension methods and helper classes for standard .NET types. They have
-came in handy in many projects I have authored in the past. So, I gave them a home in their own assembly
-and created a nuget package for it.</p>
-<p>The name of the library stems from my woodworking hobby. The first thing I usually do before
-starting a woodworking project is get the extension cord to power my tools. This library is
-similar in the way that its methods are needed in pretty much all C# code I write. So, the first
-thing I'll do is add reference to it whenever I create a new project.</p>
-<p>The extension classes in the library are listed below with links to their documentation. The documentation
-is generated with the <a href="https://johtela.github.io/LiterateProgramming">Literate Programming</a> tool I have
-also written.</p>
+					<img src="images/extension-cord.svg" class="img-responsive center-block" />
+<h1 id="extensioncord-useful-extensions-for-common.net-types">ExtensionCord - Useful Extensions for Common .NET Types</h1>
+<p>This assembly contains useful extension methods and helper classes for the basic types in the
+.NET framework. They have came in handy in many projects I've written. So, I bundled them into
+a .NET Standard assembly and created a <a href="https://www.nuget.org/packages/ExtensionCord">nuget</a>
+package from that.</p>
+<p>The name of the library stems from my woodworking hobby. Usually when I start a woodworking project
+the first thing I'll grab is the extension cord to power my tools. This library is similar in the way
+that its methods are used in pretty much all C# code I have written. So, the first thing I'll do is
+add a reference to it whenever I create a new project.</p>
+<p>The extension classes in the library are listed below with links to their documentation. The
+documentation is generated with the <a href="https://johtela.github.io/LiterateCS">LiterateCS</a>
+tool, which is another project of mine.</p>
 <h2 id="contents">Contents</h2>
 <ul>
-<li><a href="src/ArrayExt.html">ArrayExt</a> class contains methods that help accessing and modifying arrays.</li>
-<li><a href="src/ArrayExt.html">BoolExt</a> has few extension methods for booleans.</li>
-<li><a href="src/Either.html">Either</a> a generic class that can contain one of two possible values.</li>
-<li><a href="src/EnumerableExt.html">EnumerableExt</a> contains a lot of extenion methods for the IEnumerable
+<li><a href="ExtensionCord/ArrayExt.html">ArrayExt</a> class contains methods that help accessing and modifying arrays.</li>
+<li><a href="ExtensionCord/ArrayExt.html">BoolExt</a> has few extension methods for booleans.</li>
+<li><a href="ExtensionCord/Either.html">Either</a> a generic class that can contain one of two possible values.</li>
+<li><a href="ExtensionCord/EnumerableExt.html">EnumerableExt</a> contains a lot of extenion methods for the IEnumerable
 interface.</li>
-<li><a href="src/Fun.html">Fun</a> is a static class that contains methods for generic delegates Func and Action.</li>
-<li><a href="src/NumExt.html">NumExt</a> extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
-<li><a href="src/ObjectExt.html">ObjectExt</a> has few generic extension methods which work with any type.</li>
-<li><a href="src/Params.html">Params</a> is a base class for key-value collections that can be constructed
+<li><a href="ExtensionCord/Fun.html">Fun</a> is a static class that contains methods for generic delegates Func and Action.</li>
+<li><a href="ExtensionCord/NumExt.html">NumExt</a> extends number types <code>int</code>, <code>float</code>, and <code>double</code>.</li>
+<li><a href="ExtensionCord/ObjectExt.html">ObjectExt</a> has few generic extension methods which work with any type.</li>
+<li><a href="ExtensionCord/Params.html">Params</a> is a base class for key-value collections that can be constructed
 with collection initializers.</li>
-<li><a href="src/ReflectionExt.html">ReflectionExt</a> extends classes related to reflection.</li>
-<li><a href="src/Seq.html">Seq</a> is a minimal implementation of an immutable, singly-linked list.</li>
-<li><a href="src/StringExt.html">StringExt</a> has some methods that help string manipulation.</li>
-<li><a href="src/TupleExt.html">TupleExt</a> extends tuples with a couple of helper methods.</li>
+<li><a href="ExtensionCord/ReflectionExt.html">ReflectionExt</a> extends classes related to reflection.</li>
+<li><a href="ExtensionCord/Seq.html">Seq</a> is a minimal implementation of an immutable, singly-linked list.</li>
+<li><a href="ExtensionCord/StringExt.html">StringExt</a> has some methods that help string manipulation.</li>
+<li><a href="ExtensionCord/TupleExt.html">TupleExt</a> extends tuples with a couple of helper methods.</li>
 </ul>
 
 				</div>
 				<ul class="pager">
 	<li class="previous disabled"><a href="#">Previous</a></li>
-	<li class="next"><a href="src/ArrayExt.html">Next: Array Extensions</a></li>
+	<li class="next"><a href="ExtensionCord/ArrayExt.html">Next: Array Extensions</a></li>
 </ul>
 			</div>
         </div>
@@ -175,7 +180,7 @@ with collection initializers.</li>
         <div align="center">Copyright © 2018 Tommi Johtela</div>
 		<div align="right">
 			<small>
-				Documentation created with <a href="https://johtela.github.io/LiterateProgramming/">Literate Programming</a>.
+				Documentation created with <a href="https://johtela.github.io/LiterateCS/">LiterateCS</a>.
 			</small>
 		</div>
     </footer>

@@ -4,51 +4,51 @@
     desc: ExtensionCord home page.
 
   - page: Array Extensions
-    file: src\ArrayExt.cs
+    file: ExtensionCord\ArrayExt.cs
     desc: Methods that help accessing and modifying arrays.
 
-  - page: Boolean Extentensions
-    file: src\BoolExt.cs
+  - page: Boolean Extensions
+    file: ExtensionCord\BoolExt.cs
     desc: Extension methods for booleans.
 
   - page: Either Type
-    file: src\Either.cs
+    file: ExtensionCord\Either.cs
     desc: Generic class that can contain one of two possible values.
 
   - page: Enumerable Extensions
-    file: src\EnumerableExt.cs
+    file: ExtensionCord\EnumerableExt.cs
     desc: A lot of extenion methods for the `IEnumerable` interface.
 
   - page: Function Extensions
-    file: src\Fun.cs
+    file: ExtensionCord\Fun.cs
     desc: Static class that contains methods for generic delegates `Func` and `Action`.
 
   - page: Number Extensions
-    file: src\NumExt.cs
+    file: ExtensionCord\NumExt.cs
     desc: Extends number types `int`, `float`, and `double`.
 
   - page: Object Extension
-    file: src\ObjectExt.cs
+    file: ExtensionCord\ObjectExt.cs
     desc: Few generic extension methods which work with any type.
 
   - page: Params Collection
-    file: src\Params.cs
+    file: ExtensionCord\Params.cs
     desc: Base class for key-value collections.
 
   - page: Reflection Extensions
-    file: src\ReflectionExt.cs
+    file: ExtensionCord\ReflectionExt.cs
     desc: Extends classes related to reflection.
 
   - page: Seq Data Structure
-    file: src\Seq.cs
+    file: ExtensionCord\Seq.cs
     desc: Minimal implementation of an immutable, singly-linked list.
 
   - page: String Extensions
-    file: src\StringExt.cs
+    file: ExtensionCord\StringExt.cs
     desc: Methods that help string manipulation.
 
   - page: Tuple Extensions
-    file: src\TupleExt.cs
+    file: ExtensionCord\TupleExt.cs
     desc: Extends tuples with a couple of helper methods.
 
   - page: License

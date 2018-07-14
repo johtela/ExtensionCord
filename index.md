@@ -1,4 +1,5 @@
-﻿![Logo](images/extension-cord.svg){.img-responsive .center-block}
+﻿<img src="images/extension-cord.svg" class="img-responsive center-block" />
+
 # ExtensionCord - Useful Extensions for Common .NET Types
 
 This assembly contains useful extension methods and helper classes for the basic types in the 
@@ -12,7 +13,7 @@ that its methods are used in pretty much all C# code I have written. So, the fir
 add a reference to it whenever I create a new project.
 
 The extension classes in the library are listed below with links to their documentation. The 
-documentation is generated with the [Literate Programming](https://johtela.github.io/LiterateProgramming) 
+documentation is generated with the [LiterateCS](https://johtela.github.io/LiterateCS) 
 tool, which is another project of mine.
 
 ## Contents
