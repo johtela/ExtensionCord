@@ -93,23 +93,6 @@ namespace ExtensionCord
 				string.Empty;
 		}
 		/*
-		## Appending and Prepending an Item
-
-		Since IEnumerables are basically lazy iterators, it is possible to generically
-		add or remove items to them without modifying the underlying data structure or 
-		computation. We define two operations: `Append` which will add an item at the
-		end of the enumeration, and `Prepend` which adds an item at the beginning.
-
-		Note that the runtime cost incurred by these operations is very small since they
-		are using the `Concat` method, which is very efficient both in terms of memory
-		and execution time.
-		*/
-		public static IEnumerable<T> Append<T>(this IEnumerable<T> enumerable, T item) => 
-			enumerable.Concat(Enumerate(item));
-
-		public static IEnumerable<T> Prepend<T>(this IEnumerable<T> enumerable, T item) => 
-			Enumerate(item).Concat(enumerable);
-		/*
 		## Repeating an IEnumerable
 
 		You can put an IEnumerable on repeat so that you can loop through it indefinitely 
