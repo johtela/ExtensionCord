@@ -1,4 +1,6 @@
-﻿ProjectName: ExtensionCord
+﻿# Front matter defaults
+---
+ProjectName: ExtensionCord
 GitHub: https://github.com/johtela/ExtensionCord
 Footer: "Copyright © 2018 Tommi Johtela"
 License: License.html
@@ -9,3 +11,16 @@ SyntaxHighlight: coding-horror
 UseDiagrams: true
 DiagramStyle: mermaid
 UseMath: true
+
+# Command line arguments
+---
+filters:
+  - "ExtensionCord/*.cs"
+  - "*.md"
+output: docs
+solution: ExtensionCord.sln
+format: html
+trim: true
+verbose: true
+updatetoc: true
+buildlog: buildlog.txt
